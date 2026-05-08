@@ -1,0 +1,110 @@
+.cartao {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.cartao:hover {
+  transform: translateY(-10.05px);
+}
+
+.imagemPlaceholder {
+  height: 180px;
+  background: linear-gradient(135deg, #0047a0 0%, #002d66 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffb7c5;
+  color: #d0103a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.conteudo {
+  padding: 25px;
+  text-align: left;
+}
+
+.nomePacote {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.preco {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.botaoReservar {
+  width: 100%;
+  padding: 12px;
+  background: #0047a0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botaoReservar:hover {
+  background: #002d66;
+}
+
+.imagem {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.title_section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0 40px; /* Mais espaço em cima e embaixo */
+  text-align: center;
+}
+
+.page_title {
+  font-size: 3.5rem; /* Tamanho maior e imponente */
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 5px; /* Espaçamento entre letras estilo luxo */
+  text-transform: uppercase;
+  position: relative;
+  
+  /* Sombra sutil para dar profundidade */
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Linha decorativa embaixo do título (Opcional, mas fica lindo) */
+.page_title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #EF007E; /* O seu Magenta Vibrante */
+  border-radius: 2px;
+  box-shadow: 0 0 10px #EF007E;
+}

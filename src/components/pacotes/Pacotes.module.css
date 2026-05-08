@@ -1,0 +1,270 @@
+.page_pacotes {
+  background-color: #0d0d0d;
+  min-height: 100vh;
+  padding: 100px 5%;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.top_tag {
+  color: #ef007e;
+  letter-spacing: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+.magenta {
+  color: #ef007e;
+  text-shadow: 0 0 15px rgba(239, 0, 126, 0.5);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card_pacote {
+  display: flex;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  height: 320px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+/* Inverter os lados nos cards pares */
+.card_pacote:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.img_box {
+  flex: 1.2;
+}
+
+.img_box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info_box {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tag_card {
+  color: #ef007e;
+  font-weight: bold;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.info_box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.info_box p {
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.price_action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.btn_reserva {
+  background: #ef007e;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn_reserva:hover {
+  box-shadow: 0 0 20px #ef007e;
+  transform: scale(1.05);
+}
+
+/* Botão Voltar igual ao Turismo */
+.btn_voltar {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* ==================================================
+   RESPONSIVIDADE TABLET
+================================================== */
+
+@media (max-width: 992px) {
+
+  .page_pacotes {
+    padding: 100px 30px;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .header h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+  }
+
+  .container {
+    gap: 30px;
+  }
+
+  .card_pacote {
+    height: auto;
+    flex-direction: column;
+  }
+
+  /* Remove inversão no tablet/mobile */
+  .card_pacote:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .img_box {
+    width: 100%;
+    height: 280px;
+  }
+
+  .info_box {
+    padding: 30px;
+  }
+
+  .info_box h3 {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+}
+
+/* ==================================================
+   RESPONSIVIDADE MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .page_pacotes {
+    padding: 90px 20px 40px;
+  }
+
+  .header {
+    margin-bottom: 45px;
+  }
+
+  .top_tag {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .container {
+    gap: 25px;
+  }
+
+  .card_pacote {
+    border-radius: 24px;
+  }
+
+  .img_box {
+    height: 220px;
+  }
+
+  .info_box {
+    padding: 25px 20px;
+  }
+
+  .tag_card {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+
+  .info_box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .info_box p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .price_action {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .price {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .btn_reserva {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .btn_voltar {
+    top: 15px;
+    left: 15px;
+
+    padding: 10px 16px;
+
+    font-size: 0.85rem;
+  }
+
+}

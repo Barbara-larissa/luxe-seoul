@@ -1,0 +1,207 @@
+.page_contato {
+  background-color: #050505;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 5%;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+/* LADO ESQUERDO */
+.tag {
+  color: #ef007e;
+  letter-spacing: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.info_side h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 20px 0;
+  line-height: 1.1;
+}
+
+.magenta {
+  color: #ef007e;
+  text-shadow: 0 0 20px rgba(239, 0, 126, 0.4);
+}
+
+.info_side p {
+  color: #888;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.contact_list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact_item span {
+  font-size: 0.7rem;
+  color: #ef007e;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.contact_item p {
+  color: #fff;
+  margin-top: 5px;
+  font-size: 1.1rem;
+}
+
+/* FORMULÁRIO GLASSMORPHISM */
+.glass_form {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  padding: 50px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  min-width: 450px;
+}
+
+.input_group {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input_group label {
+  font-size: 0.7rem;
+  color: #666;
+  letter-spacing: 2px;
+}
+
+.input_group input, .input_group textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input_group input:focus, .input_group textarea:focus {
+  border-color: #ef007e;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn_enviar {
+  width: 100%;
+  padding: 18px;
+  background: #ef007e;
+  border: none;
+  color: white;
+  font-weight: 900;
+  letter-spacing: 2px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.btn_enviar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(239, 0, 126, 0.4);
+}
+
+/* Botão Voltar */
+.btn_voltar {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .container { flex-direction: column; gap: 50px; text-align: center; }
+  .glass_form { min-width: 100%; padding: 30px; }
+  .info_side h1 { font-size: 2.5rem; }
+}
+
+/* --- RESPONSIVIDADE ADICIONAL --- */
+
+@media (max-width: 950px) {
+  .container { 
+    flex-direction: column; 
+    gap: 60px; 
+    text-align: center; 
+    padding-top: 40px;
+  }
+  
+  .glass_form { 
+    min-width: 100%; 
+    padding: 30px; 
+  }
+
+  .info_side h1 { 
+    font-size: 2.8rem; 
+  }
+
+  /* Centraliza a lista de contatos no mobile */
+  .contact_list {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page_contato {
+    padding: 100px 20px; /* Mais espaço no topo por causa do botão voltar */
+  }
+
+  .info_side h1 { 
+    font-size: 2.2rem; 
+  }
+
+  .info_side p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .glass_form {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .btn_voltar {
+    top: 20px;
+    left: 20px;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    background: rgba(0, 0, 0, 0.5); /* Fundo para não sumir no brilho */
+    backdrop-filter: blur(5px);
+  }
+
+  .btn_enviar {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ajuste para telas muito curtas (celular deitado) */
+@media (max-height: 700px) {
+  .page_contato {
+    align-items: flex-start;
+  }
+}
