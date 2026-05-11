@@ -381,10 +381,9 @@
   }
 }
 
-/* Ajuste para telas bem pequenas (iPhone SE, etc) */
-/* --- APAGUE TODOS OS OUTROS @MEDIA E COLE SÓ ESTE --- */
 
-@m@media (max-width: 480px) {
+
+@media (max-width: 480px) {
 
   .page_turismo {
     padding: 100px 20px 50px;
