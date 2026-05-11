@@ -121,7 +121,6 @@
   box-shadow: 0 10px 30px rgba(239, 0, 126, 0.4);
 }
 
-/* Botão Voltar */
 .btn_voltar {
   position: fixed;
   top: 30px;
@@ -132,16 +131,10 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 10;
 }
 
-@media (max-width: 950px) {
-  .container { flex-direction: column; gap: 50px; text-align: center; }
-  .glass_form { min-width: 100%; padding: 30px; }
-  .info_side h1 { font-size: 2.5rem; }
-}
-
-/* --- RESPONSIVIDADE ADICIONAL --- */
-
+/* RESPONSIVIDADE TABLET */
 @media (max-width: 950px) {
   .container { 
     flex-direction: column; 
@@ -159,15 +152,15 @@
     font-size: 2.8rem; 
   }
 
-  /* Centraliza a lista de contatos no mobile */
   .contact_list {
     align-items: center;
   }
 }
 
+
 @media (max-width: 480px) {
   .page_contato {
-    padding: 100px 20px; /* Mais espaço no topo por causa do botão voltar */
+    padding: 100px 20px; 
   }
 
   .info_side h1 { 
@@ -189,7 +182,7 @@
     left: 20px;
     padding: 8px 15px;
     font-size: 0.8rem;
-    background: rgba(0, 0, 0, 0.5); /* Fundo para não sumir no brilho */
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
   }
 
@@ -199,7 +192,6 @@
   }
 }
 
-/* Ajuste para telas muito curtas (celular deitado) */
 @media (max-height: 700px) {
   .page_contato {
     align-items: flex-start;

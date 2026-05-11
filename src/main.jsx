@@ -12,24 +12,13 @@ import Contato from './components/Contato/Contato.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* O basename="/luxe-seoul" é a peça chave! 
-      Ele avisa ao React Router que o site está dentro de uma subpasta no GitHub.
-    */}
-    <BrowserRouter basename="/luxe-seoul">
+    {/* Removido o basename para funcionar corretamente na Vercel e Localhost */}
+    <BrowserRouter>
       <Routes>
-        {/* Rota da Página Inicial */}
         <Route path="/" element={<App />} />
-        
-        {/* Rota da Página de Turismo */}
         <Route path="/turismo" element={<Turismo />} />
-        
-        {/* Rota da Página de Pacotes */}
         <Route path="/pacotes" element={<Pacotes />} />
-
-        {/* Rota da Página Sobre a Agência */}
         <Route path="/sobre" element={<Sobre />} />
-
-        {/* Rota da Página de Contato */}
         <Route path="/contato" element={<Contato />} />
       </Routes>
     </BrowserRouter>

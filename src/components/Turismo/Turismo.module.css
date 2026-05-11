@@ -1,3 +1,6 @@
+/* ==================================================
+   ESTILO GERAL DA PÁGINA TURISMO
+================================================== */
 .page_turismo {
   background-color: #0d0d0d;
   min-height: 100vh;
@@ -19,6 +22,9 @@
   color: #ffffff;
 }
 
+/* ==================================================
+   CONTAINER E CARDS
+================================================== */
 .cards_container {
   max-width: 1100px;
   margin: 0 auto;
@@ -29,7 +35,7 @@
 
 .turismo_card {
   display: flex;
-  background: rgba(255, 255, 255, 0.05); /* Efeito de transparência */
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
@@ -41,7 +47,7 @@
 
 .turismo_card:hover {
   transform: translateY(-5px);
-  border: 1px solid #ef007e; /* Borda magenta no hover */
+  border: 1px solid #ef007e;
   box-shadow: 0 10px 30px rgba(239, 0, 126, 0.2);
 }
 
@@ -49,6 +55,7 @@
   flex: 1.5;
   overflow: hidden;
   position: relative;
+
 }
 
 .img_wrapper img {
@@ -56,6 +63,7 @@
   height: 100%;
   object-fit: cover;
   mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
 }
 
 .card_content {
@@ -86,46 +94,26 @@
   line-height: 1.5;
 }
 
-/* Responsividade */
-@media (max-width: 850px) {
-  .turismo_card {
-    flex-direction: column;
-    height: auto;
-  }
-  .img_wrapper {
-    height: 200px;
-  }
-}
 
-/* --- ESTILO PARA INVERTER OS LADOS --- */
-
-/* Seleciona os cards pares (2º, 4º, etc.) */
 .cards_container .turismo_card:nth-child(even) {
-  /* Inverte a direção do flexbox */
   flex-direction: row-reverse;
 }
 
-/* Ajusta o degradê da imagem quando invertido */
 .cards_container .turismo_card:nth-child(even) .img_wrapper img {
-  /* O degradê agora deve ir para a esquerda */
   mask-image: linear-gradient(to left, black 80%, transparent 100%);
   -webkit-mask-image: linear-gradient(to left, black 80%, transparent 100%);
 }
 
-/* Garante que o texto fique alinhado corretamente quando invertido */
-.cards_container .turismo_card:nth-child(even) .card_content {
-  text-align: left; /* Mantém o texto alinhado à esquerda, ou 'right' se preferir */
-}
-
-
+/* ==================================================
+   BOTÃO VOLTAR
+================================================== */
 .btn_voltar {
   position: fixed;
   top: 30px;
   left: 30px;
   z-index: 100;
-  
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px); /* Efeito de vidro */
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
   padding: 10px 20px;
@@ -137,7 +125,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: border 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn_voltar:hover {
@@ -146,341 +134,60 @@
   box-shadow: 0 0 15px rgba(239, 0, 126, 0.4);
 }
 
-.btn_voltar span {
-  font-size: 1.2rem;
-}
-
 /* ==================================================
-   RESPONSIVIDADE TABLET
+   RESPONSIVIDADE UNIFICADA (TABLET E MOBILE)
 ================================================== */
-
 @media (max-width: 992px) {
-
-  .page_turismo {
-    padding: 100px 30px 50px;
-  }
-
-  .header_turismo {
-    margin-bottom: 45px;
-  }
-
-  .page_title {
-    font-size: 2rem;
-    letter-spacing: 3px;
-  }
-
-  .cards_container {
-    gap: 25px;
-  }
-
-  .turismo_card {
-    flex-direction: column;
-    height: auto;
-  }
-
-  /* Remove inversão no tablet/mobile */
-  .cards_container .turismo_card:nth-child(even) {
-    flex-direction: column;
-  }
-
-  .img_wrapper {
-    width: 100%;
-    height: 260px;
-  }
-
-  .img_wrapper img {
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-  .cards_container .turismo_card:nth-child(even) .img_wrapper img {
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-  .card_content {
-    padding: 30px;
-  }
-
-  .card_content h3 {
-    font-size: 1.5rem;
-  }
-
-}
-
-/* ==================================================
-   RESPONSIVIDADE TABLET
-================================================== */
-
-@media (max-width: 992px) {
-
-  .page_turismo {
-    padding: 100px 30px 50px;
-  }
-
-  .header_turismo {
-    margin-bottom: 50px;
-    padding: 0 10px;
-  }
-
-  .page_title {
-    width: 100%;
-
-    font-size: clamp(2rem, 5vw, 2.5rem);
-
-    line-height: 1.3;
-
-    letter-spacing: 2px;
-
-    text-align: center;
-
-    word-break: break-word;
-  }
-
-  .cards_container {
-    gap: 30px;
-  }
-
-  .turismo_card {
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-
-    min-height: 280px;
-    height: auto;
-
-    border-radius: 24px;
-
-    overflow: hidden;
-  }
-
-  /* REMOVE INVERSÃO */
-  .cards_container .turismo_card:nth-child(even) {
-    flex-direction: column;
-  }
-
-  .img_wrapper {
-    width: 100%;
-    height: 320px;
-
-    flex: unset;
-  }
-
-  .img_wrapper img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-  .cards_container .turismo_card:nth-child(even) .img_wrapper img {
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-  .card_content {
-    width: 100%;
-
-    padding: 35px;
-
-    box-sizing: border-box;
-  }
-
-  .tag_text {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-  }
-
-  .card_content h3 {
-    font-size: 1.7rem;
-    line-height: 1.3;
-
-    margin-bottom: 15px;
-  }
-
-  .card_content p {
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-}
-
-
-
-/* ==================================================
-   RESPONSIVIDADE (TABLET E MOBILE)
-================================================== */
-
-@media (max-width: 992px) {
-  .page_turismo {
-    padding: 100px 20px 50px; /* Reduzi um pouco as laterais */
-  }
-
-  .btn_voltar {
-    top: 20px;
-    left: 20px;
-    padding: 8px 15px;
-    font-size: 0.8rem;
-  }
-
-  .page_title {
-    font-size: clamp(1.8rem, 5vw, 2.3rem);
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-  }
-
-  .cards_container {
-    gap: 35px; /* Espaço maior entre os cards para não embolar */
-  }
-
-  .turismo_card {
-    flex-direction: column !important; /* Força a pilha vertical */
-    height: auto;
-    max-width: 500px; /* Centraliza melhor o card no mobile */
-    margin: 0 auto;
-  }
-
-  /* Remove qualquer inversão de lado que existia no Desktop */
-  .cards_container .turismo_card:nth-child(even) {
-    flex-direction: column !important;
-  }
-
-  .img_wrapper {
-    width: 100%;
-    height: 240px; /* Altura ideal para mobile */
-    flex: none;
-  }
-
-  .img_wrapper img {
-    mask-image: none !important; /* Remove o degradê lateral no mobile */
-    -webkit-mask-image: none !important;
-    object-position: center;
-  }
-
-  .card_content {
-    padding: 25px;
-    text-align: center; /* Centraliza o texto para um visual mais harmônico */
-  }
-
-  .tag_text {
-    font-size: 0.7rem;
-  }
-
-  .card_content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-  }
-
-  .card_content p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-}
-
-
-
-@media (max-width: 480px) {
-
   .page_turismo {
     padding: 100px 20px 50px;
   }
 
-  .header_turismo {
-    margin-bottom: 40px;
-    padding: 0 10px;
-  }
-
   .page_title {
     font-size: clamp(1.8rem, 5vw, 2.3rem);
     letter-spacing: 2px;
-    line-height: 1.3;
-    margin-bottom: 20px;
   }
 
   .cards_container {
     gap: 35px;
   }
 
-  .turismo_card {
-    flex-direction: column !important;
 
-    width: 100%;
-
-    min-height: unset;
-    height: auto;
-
-    border-radius: 24px;
-
-    overflow: hidden;
-
-    margin: 0 auto;
-  }
-
+  .turismo_card,
   .cards_container .turismo_card:nth-child(even) {
     flex-direction: column !important;
+    height: auto;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .img_wrapper {
     width: 100%;
-    height: 260px;
-
+    height: 240px;
     flex: none;
   }
 
-  .img_wrapper img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
+  .img_wrapper img,
+  .cards_container .turismo_card:nth-child(even) .img_wrapper img {
     mask-image: none !important;
     -webkit-mask-image: none !important;
   }
 
   .card_content {
-    width: 100%;
+    padding: 25px;
+    text-align: center;
+  }
+}
 
+@media (max-width: 480px) {
+  .card_content {
     padding: 30px 22px;
-
-    box-sizing: border-box;
-
     text-align: left;
-  }
-
-  .tag_text {
-    font-size: 0.72rem;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-  }
-
-  .card_content h3 {
-    font-size: 1.7rem;
-    line-height: 1.3;
-
-    margin-bottom: 16px;
-  }
-
-  .card_content p {
-    font-size: 1rem;
-    line-height: 1.7;
-
-    color: #bbbbbb;
   }
 
   .btn_voltar {
     top: 20px;
     left: 20px;
-
     padding: 8px 15px;
-
     font-size: 0.8rem;
-
-    gap: 5px;
   }
-
 }

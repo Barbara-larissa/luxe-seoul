@@ -1,9 +1,9 @@
-import { useNavigate } from 'react-router-dom'; // 1. Importação obrigatória
+import { useNavigate } from 'react-router-dom'; 
 import styles from './Hero.module.css';
 import imagemCerejeira from '../../assets/img/cerejeiras.png';
 
 export default function Hero() {
-  const navigate = useNavigate(); // 2. Inicializa a função de navegação
+  const navigate = useNavigate(); 
 
   return (
     <section className={styles.hero_section}>

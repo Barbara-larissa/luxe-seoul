@@ -61,7 +61,7 @@
 }
 
 .preco strong {
-  display: block; /* Faz o valor ir para a linha de baixo do 'A partir de' */
+  display: block; 
   font-size: 1.2rem;
   color: #333;
   font-weight: 800;

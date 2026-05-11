@@ -18,11 +18,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   animation: zoomInfinite 20s infinite alternate;
-  z-index: 0; /* 👈 corrigido */
+  z-index: 0;
+
 }
+
 @keyframes zoomInfinite {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
 }
 
 /* --- ANIMAÇÃO DAS PÉTALAS --- */
@@ -46,17 +53,56 @@
   animation: fall linear infinite;
 }
 
-.petal:nth-child(odd) { background-color: #ffc0cb; width: 10px; height: 10px; }
-.petal:nth-child(1) { left: 10%; animation-duration: 7s; animation-delay: 1s; }
-.petal:nth-child(2) { left: 30%; animation-duration: 9s; animation-delay: 3s; }
-.petal:nth-child(3) { left: 50%; animation-duration: 6s; animation-delay: 0s; }
-.petal:nth-child(4) { left: 70%; animation-duration: 10s; animation-delay: 5s; }
-.petal:nth-child(5) { left: 90%; animation-duration: 8s; animation-delay: 2s; }
+.petal:nth-child(odd) {
+  background-color: #ffc0cb;
+  width: 10px;
+  height: 10px;
+}
+
+.petal:nth-child(1) {
+  left: 10%;
+  animation-duration: 7s;
+  animation-delay: 1s;
+}
+
+.petal:nth-child(2) {
+  left: 30%;
+  animation-duration: 9s;
+  animation-delay: 3s;
+}
+
+.petal:nth-child(3) {
+  left: 50%;
+  animation-duration: 6s;
+  animation-delay: 0s;
+}
+
+.petal:nth-child(4) {
+  left: 70%;
+  animation-duration: 10s;
+  animation-delay: 5s;
+}
+
+.petal:nth-child(5) {
+  left: 90%;
+  animation-duration: 8s;
+  animation-delay: 2s;
+}
 
 @keyframes fall {
-  0% { transform: translateY(0vh) rotate(0deg); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateY(110vh) rotate(720deg); opacity: 0.2; }
+  0% {
+    transform: translateY(0vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0.2;
+  }
 }
 
 /* --- TEXTO E OVERLAY --- */
@@ -78,38 +124,35 @@
 }
 
 .hero_year {
-  /* Usamos o tom mais escuro e saturado da sua paleta (#EF007E) */
-  color: #EF007E; 
-  font-weight: 900; /* Garante que a letra seja bem grossa */
-  
-  /* --- AQUI ESTÁ O SEGREDO DO CONTRASTE --- */
-  /* Camada 1: Sombra preta dura para separar o texto do fundo */
+  color: #EF007E;
+  font-weight: 900;
+
+ 
+
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8),
-               
-               /* Camada 2: Brilho na cor Magenta para manter a identidade */
-               0 0 15px rgba(239, 0, 126, 0.7),
-               
-               /* Camada 3: Sombra preta suave para dar profundidade */
-               3px 3px 10px rgba(0, 0, 0, 0.6);
+
+    0 0 15px rgba(239, 0, 126, 0.7),
+    3px 3px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero_subtitle {
-  font-size: 1.8rem; /* Aumentamos para dar mais destaque */
+  font-size: 1.8rem;
   color: white;
-  margin-top: 25px; /* Um pouco mais de espaço em relação ao título */
-  margin-bottom: 30px; /* Espaço extra antes do botão */
-  letter-spacing: 4px; /* Espaçamento chique entre as letras */
-  font-weight: 300; /* Letra mais fina para ficar elegante */
-  text-transform: uppercase; /* Deixa em maiúsculo para um visual mais profissional */
-  
-  /* Sombra estratégica para o texto não sumir nas partes claras da foto */
+  margin-top: 25px;
+  margin-bottom: 30px;
+  letter-spacing: 4px;
+  font-weight: 300;
+  text-transform: uppercase;
+
+
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  
-  /* Garante que o texto não quebre de forma estranha em telas largas */
+
+
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
+
 .hero_section {
   position: relative;
   height: 100vh;
@@ -120,8 +163,8 @@
 
 .btn_primary {
   margin-top: 30px;
-  padding: 18px 50px; /* Um pouco maior para dar destaque */
-  background: #ef007e; /* Magenta principal para chamar atenção */
+  padding: 18px 50px;
+  background: #ef007e;
   color: white;
   border: none;
   border-radius: 50px;
@@ -132,14 +175,15 @@
   transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(239, 0, 126, 0.3);
   text-transform: uppercase;
-  display: inline-block; /* Garante que o Link se comporte como botão */
-  text-decoration: none; /* Remove o sublinhado do Link */
+  display: inline-block;
+  text-decoration: none;
+
 }
 
 .btn_primary:hover {
-  background: #000000; /* Fica preto no hover, bem elegante */
-  color: #ef007e; /* O texto fica magenta */
-  transform: translateY(-5px); /* Efeito de flutuar */
+
+  color: #ef007e;
+  transform: translateY(-5px);
   box-shadow: 0 15px 25px rgba(239, 0, 126, 0.5);
   border: 1px solid #ef007e;
 }
@@ -159,7 +203,8 @@
 
 @media (max-width: 768px) {
   .hero_section {
-    height: 100vh; /* Garante que ocupe a tela toda mesmo no tablet */
+    height: 100vh;
+   
   }
 
   .hero_title {
@@ -182,8 +227,8 @@
 
 @media (max-width: 480px) {
   .hero_title {
-    font-size: 2.2rem; /* Tamanho ideal para não quebrar em 3 linhas */
-    letter-spacing: 2px;
+    font-size: 2.2rem;
+        letter-spacing: 2px;
   }
 
   .hero_subtitle {
@@ -192,34 +237,35 @@
     line-height: 1.4;
   }
 
-  /* Reduzimos o número de pétalas visíveis ou o tamanho delas 
-     para não cobrir o texto no celular */
+
   .petal {
     width: 10px;
     height: 10px;
   }
 
   .btn_primary {
-    width: 80%; /* Botão maior para facilitar o clique com o polegar */
+    width: 80%;
+
     padding: 18px;
     margin-top: 20px;
   }
-  
-  /* Ajuste na animação de zoom para não pesar no processamento do celular */
+
+
   .hero_background {
     animation: zoomInfinite 30s infinite alternate;
   }
 }
 
-/* Ajuste para celulares deitados (landscape) */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero_title {
     font-size: 1.8rem;
   }
+
   .hero_subtitle {
     font-size: 0.9rem;
     margin-top: 5px;
   }
+
   .btn_primary {
     padding: 10px 25px;
     margin-top: 10px;

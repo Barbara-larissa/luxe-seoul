@@ -1,8 +1,8 @@
 .page_sobre {
-  background-color: #050505; /* Preto quase puro para elegância */
+  background-color: #050505; 
   min-height: 100vh;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden; /* Ajustado de 'overflow' para 'overflow-x' para permitir o scroll vertical */
 }
 
 .split_container {
@@ -78,7 +78,6 @@
   object-fit: cover;
 }
 
-/* Esse gradiente faz a imagem "sumir" no preto da esquerda */
 .image_gradient {
   position: absolute;
   top: 0;
@@ -110,9 +109,7 @@
 /* ==================================================
    RESPONSIVIDADE TABLET
 ================================================== */
-
 @media (max-width: 992px) {
-
   .split_container {
     flex-direction: column;
   }
@@ -145,21 +142,14 @@
   }
 
   .image_gradient {
-    background: linear-gradient(
-      to top,
-      #050505 5%,
-      transparent 50%
-    );
+    background: linear-gradient(to top, #050505 5%, transparent 50%);
   }
-
 }
 
 /* ==================================================
    RESPONSIVIDADE MOBILE
 ================================================== */
-
 @media (max-width: 600px) {
-
   .page_sobre {
     overflow-x: hidden;
   }
@@ -188,20 +178,15 @@
   .text {
     font-size: 0.95rem;
     line-height: 1.7;
-
     margin: 0 auto 35px;
-
     max-width: 100%;
   }
 
   .stats_grid {
     width: 100%;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     gap: 25px;
-
     justify-content: center;
   }
 
@@ -228,20 +213,13 @@
   }
 
   .image_gradient {
-    background: linear-gradient(
-      to top,
-      #050505 0%,
-      transparent 60%
-    );
+    background: linear-gradient(to top, #050505 0%, transparent 60%);
   }
 
   .btn_voltar {
     top: 15px;
     left: 15px;
-
     padding: 10px 16px;
-
     font-size: 0.85rem;
   }
-
 }
