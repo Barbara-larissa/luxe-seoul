@@ -1,185 +1,333 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+/* --- RESET E VARIÁVEIS DO PROJETO --- */
+:root {
+  --magenta: #EF007E;
+  --azul-reserva: #007bff;
+  --bg-cartao: #ffffff;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#center {
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+}
+
+/* --- TÍTULO DA SEÇÃO (O TOQUE DE LUXO) --- */
+.title_section {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0 40px;
+  text-align: center;
 }
 
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
-}
-
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
-
-.ticks {
+.page_title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  letter-spacing: 5px;
+  text-transform: uppercase;
   position: relative;
-  width: 100%;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
-
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.page_title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--magenta);
+  border-radius: 2px;
+  box-shadow: 0 0 12px var(--magenta);
+}
+
+/* --- GRID DE PACOTES (CORRIGIDO) --- */
+.packages_grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 30px !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 40px 20px !important;
+  align-items: start !important;
+}
+
+.package_item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- CSS DOS CARDS (SUA ESTRUTURA) --- */
+.cartao {
+  background: var(--bg-cartao);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+  width: 100%;
+}
+
+.cartao:hover {
+  transform: translateY(-10px);
+}
+
+.imagem {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.conteudo {
+  padding: 25px;
+  text-align: left;
+}
+
+.nomePacote {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.precoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.preco {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.botaoDetalhes {
+  background: transparent;
+  border: 1px solid var(--magenta);
+  color: var(--magenta);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botaoDetalhes:hover {
+  background: #fce4ec;
+  transform: scale(1.05);
+}
+
+.botaoReservar {
+  width: 100%;
+  background-color: var(--magenta);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(239, 0, 126, 0.3);
+  transition: background 0.3s;
+}
+
+.botaoReservar:hover {
+  background-color: #d4006f;
+}
+
+
+
+
+
+
+
+
+
+/* ==================================================
+   ESTILIZAÇÃO DO MODAL (ESTRUTURA)
+================================================== */
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Garante que fique acima de tudo */
+}
+
+.modal_content {
+  background: #ffffff !important;
+  padding: 35px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  color: #333 !important;
+}
+
+.btn_fechar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #f0f0f0;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #666;
+  font-weight: bold;
+}
+
+/* ==================================================
+   ESTILIZAÇÃO DO CALENDÁRIO (React-Calendar)
+================================================== */
+
+.calendar_container {
+  margin: 20px 0;
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 10px;
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+}
+
+/* Resetando bordas padrão da biblioteca */
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Estilo do dia selecionado (Magenta) */
+.react-calendar__tile--active {
+  background: var(--magenta) !important;
+  color: white !important;
+  border-radius: 8px;
+}
+
+.react-calendar__tile--now {
+  background: #fff0f6 !important;
+  color: var(--magenta) !important;
+  font-weight: bold;
+}
+
+/* ==================================================
+   INPUTS DE PESSOAS E RODAPÉ
+================================================== */
+
+.modal_grid_inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.modal_input_group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f4f6f8 !important;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.modal_input_group label {
+  font-weight: 700;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.modal_input {
+  border: none !important;
+  background: transparent !important;
+  width: 50px;
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--magenta) !important;
+  outline: none;
+}
+
+.modal_footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #ddd;
+}
+
+.modal_price_total {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.modal_price_total strong {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-left: 10px;
+}
+
+/* --- BOTÃO CONFIRMAR (ESTILO LIMPO) --- */
+
+.modal_content .btn_confirmar {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  
+  /* Visual Premium */
+  background: var(--magenta);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  
+  /* Tipografia */
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  /* Interação */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(239, 0, 126, 0.3);
+}
+
+.modal_content .btn_confirmar:hover {
+  background-color: #d4006f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 0, 126, 0.4);
+}
+
+.modal_content .btn_confirmar:active {
+  transform: translateY(0);
+}

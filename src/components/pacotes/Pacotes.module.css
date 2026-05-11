@@ -1,3 +1,6 @@
+/* ==================================================
+   ESTILIZAÇÃO DA PÁGINA DE PACOTES
+================================================== */
 .page_pacotes {
   background-color: #0d0d0d;
   min-height: 100vh;
@@ -37,6 +40,7 @@
   gap: 40px;
 }
 
+/* --- CARDS --- */
 .card_pacote {
   display: flex;
   background: rgba(255, 255, 255, 0.03);
@@ -48,7 +52,6 @@
   transition: 0.3s;
 }
 
-/* Inverter os lados nos cards pares */
 .card_pacote:nth-child(even) {
   flex-direction: row-reverse;
 }
@@ -119,7 +122,6 @@
   transform: scale(1.05);
 }
 
-/* Botão Voltar igual ao Turismo */
 .btn_voltar {
   position: fixed;
   top: 30px;
@@ -134,137 +136,3 @@
   cursor: pointer;
 }
 
-/* ==================================================
-   RESPONSIVIDADE TABLET
-================================================== */
-
-@media (max-width: 992px) {
-
-  .page_pacotes {
-    padding: 100px 30px;
-  }
-
-  .header {
-    margin-bottom: 60px;
-  }
-
-  .header h1 {
-    font-size: 2.8rem;
-    line-height: 1.2;
-  }
-
-  .container {
-    gap: 30px;
-  }
-
-  .card_pacote {
-    height: auto;
-    flex-direction: column;
-  }
-
-  /* Remove inversão no tablet/mobile */
-  .card_pacote:nth-child(even) {
-    flex-direction: column;
-  }
-
-  .img_box {
-    width: 100%;
-    height: 280px;
-  }
-
-  .info_box {
-    padding: 30px;
-  }
-
-  .info_box h3 {
-    font-size: 1.5rem;
-  }
-
-  .price {
-    font-size: 1.5rem;
-  }
-
-}
-
-/* ==================================================
-   RESPONSIVIDADE MOBILE
-================================================== */
-
-@media (max-width: 600px) {
-
-  .page_pacotes {
-    padding: 90px 20px 40px;
-  }
-
-  .header {
-    margin-bottom: 45px;
-  }
-
-  .top_tag {
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-  }
-
-  .header h1 {
-    font-size: 2rem;
-    line-height: 1.3;
-  }
-
-  .container {
-    gap: 25px;
-  }
-
-  .card_pacote {
-    border-radius: 24px;
-  }
-
-  .img_box {
-    height: 220px;
-  }
-
-  .info_box {
-    padding: 25px 20px;
-  }
-
-  .tag_card {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-  }
-
-  .info_box h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-  }
-
-  .info_box p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .price_action {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 15px;
-  }
-
-  .price {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  .btn_reserva {
-    width: 100%;
-    padding: 14px;
-    border-radius: 14px;
-  }
-
-  .btn_voltar {
-    top: 15px;
-    left: 15px;
-
-    padding: 10px 16px;
-
-    font-size: 0.85rem;
-  }
-
-}

@@ -1,3 +1,4 @@
+/* --- CARD ESTRUTURA PRINCIPAL --- */
 .cartao {
   background: white;
   border-radius: 20px;
@@ -5,18 +6,17 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
   border: 1px solid #eee;
+  width: 100%;
 }
 
 .cartao:hover {
-  transform: translateY(-10.05px);
+  transform: translateY(-10px);
 }
 
-.imagemPlaceholder {
-  height: 180px;
-  background: linear-gradient(135deg, #0047a0 0%, #002d66 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.imagem {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
   position: relative;
 }
 
@@ -32,79 +32,75 @@
   font-weight: bold;
 }
 
+/* --- CONTEÚDO --- */
 .conteudo {
   padding: 25px;
   text-align: left;
 }
 
 .nomePacote {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
-.preco {
-  color: #666;
-  font-size: 16px;
+/* --- PREÇO E BOTÃO DETALHES --- */
+.precoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
+.preco {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.2;
+}
+
+.preco strong {
+  display: block; /* Faz o valor ir para a linha de baixo do 'A partir de' */
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 800;
+}
+
+.botaoDetalhes {
+  background: transparent;
+  border: 1.5px solid #EF007E;
+  color: #EF007E;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.botaoDetalhes:hover {
+  background: #fff0f6;
+  transform: scale(1.05);
+}
+
+/* --- BOTÃO RESERVAR --- */
 .botaoReservar {
   width: 100%;
-  padding: 12px;
-  background: #0047a0;
+  background-color: #EF007E;
   color: white;
+  padding: 14px;
   border: none;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(239, 0, 126, 0.2);
 }
 
 .botaoReservar:hover {
-  background: #002d66;
-}
-
-.imagem {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.title_section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 0 40px; /* Mais espaço em cima e embaixo */
-  text-align: center;
-}
-
-.page_title {
-  font-size: 3.5rem; /* Tamanho maior e imponente */
-  font-weight: 900;
-  color: #ffffff;
-  letter-spacing: 5px; /* Espaçamento entre letras estilo luxo */
-  text-transform: uppercase;
-  position: relative;
-  
-  /* Sombra sutil para dar profundidade */
-  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
-}
-
-/* Linha decorativa embaixo do título (Opcional, mas fica lindo) */
-.page_title::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: #EF007E; /* O seu Magenta Vibrante */
-  border-radius: 2px;
-  box-shadow: 0 0 10px #EF007E;
+  background-color: #d4006f;
+  box-shadow: 0 6px 20px rgba(239, 0, 126, 0.3);
 }
