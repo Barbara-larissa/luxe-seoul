@@ -1,17 +1,14 @@
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import styles from './Contato.module.css';
 import BotaoVoltar from '../BotaoVoltar/BotaoVoltar';
 
 export default function Contato() {
-  const navigate = useNavigate();
-
   return (
     <div className={styles.page_contato}>
       <BotaoVoltar />
 
       <main className={styles.container}>
-        {/* LADO ESQUERDO: INFOS */}
+        {/* LADO ESQUERDO: INFOS + MAPA CORRIGIDO */}
         <motion.div 
           className={styles.info_side}
           initial={{ opacity: 0, x: -50 }}
@@ -36,6 +33,21 @@ export default function Contato() {
               <p>Londrina, PR - Estação 43</p>
             </div>
           </div>
+
+          {/* 🌟 NOVO: Bloco do Mapa Corrigido e Real */}
+          <div className={styles.map_wrapper}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.630560241838!2d-51.17170132386127!3d-23.311005278972583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb4373a696c211%3A0x6790d986915f07a7!2zRXN0YcOnw6NvIDQzIC0gSGVsbG8gQ293b3JraW5nIExvbmRyaW5h!5e0!3m2!1spt-BR!2sbr!4v1709664560123!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização da Agência na Estação 43"
+              className={styles.google_map}
+            ></iframe>
+          </div>
         </motion.div>
 
         {/* LADO DIREITO: FORMULÁRIO PREMIUM */}
@@ -45,7 +57,7 @@ export default function Contato() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <form className={styles.glass_form}>
+          <form className={styles.glass_form} onSubmit={(e) => e.preventDefault()}>
             <div className={styles.input_group}>
               <label>NOME COMPLETO</label>
               <input type="text" placeholder="Como podemos te chamar?" />
