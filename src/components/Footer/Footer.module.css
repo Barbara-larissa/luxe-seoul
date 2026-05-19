@@ -1,0 +1,260 @@
+/* ==========================================
+   1. ESTRUTURA GERAL DO FOOTER
+   ========================================== */
+.footer {
+  background-color: #050505;
+  color: #fff;
+  padding: 60px 0 30px;
+  border-top: 3px solid #EF007E;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================
+   2. BARRA DE CONFIANÇA (TRUST BAR)
+   ========================================== */
+.trust_bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background: rgba(239, 0, 126, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  border: 1px solid rgba(239, 0, 126, 0.2);
+}
+
+.trust_item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.trust_icon {
+  font-size: 2rem;
+}
+
+.trust_item h4 {
+  font-size: 0.85rem;
+  color: #EF007E;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.trust_item p {
+  font-size: 0.75rem;
+  color: #888;
+  margin: 5px 0 0;
+}
+
+/* ==========================================
+   3. COLUNAS PRINCIPAIS E CONTEÚDO
+   ========================================== */
+.main_footer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer_col h3 {
+  font-size: 0.9rem;
+  color: #EF007E;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer_col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer_col li {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer_col li:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+.logo {
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.logo span { 
+  color: #EF007E; 
+}
+
+.description {
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   4. SELOS DE SEGURANÇA E REDES SOCIAIS
+   ========================================== */
+
+/* Selos Blindado e Google */
+.badges {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.badge_safe {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 8px;
+  font-size: 0.7rem;
+  text-align: center;
+  border-left: 4px solid #00ff00;
+}
+
+.badge_google {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 8px;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #4285F4;
+}
+
+/*=========== Redes Sociais ==================*/
+
+/* Container dos ícones */
+.social_icons_row {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Estilo base do quadradinho - Bem Dark */
+.social_icon_item {
+  background: #111; /* Um pouco mais escuro que o selo */
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid #222; /* Borda bem discreta */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 1.2rem;
+  color: #666; /* Ícone "apagado" por padrão */
+}
+
+/* HOVER UNIFICADO - O toque de luxo */
+.social_icon_item:hover {
+  transform: translateY(-5px);
+  background: #1a1a1a;
+  color: #EF007E; /* TODOS ficam Magenta no hover */
+  border-color: #EF007E;
+  box-shadow: 0 5px 15px rgba(239, 0, 126, 0.2); /* Brilho suave magenta */
+}
+
+
+/* ==========================================
+   5. BARRA INFERIOR (COPYRIGHT E PAGAMENTOS)
+   ========================================== */
+.bottom_bar {
+  border-top: 1px solid #1a1a1a;
+  padding-top: 30px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  gap: 40px;               
+  font-size: 1rem;         
+  color: #888;
+}
+
+.payment_icons {
+  display: flex;
+  gap: 15px;
+  font-size: 1.8rem;       
+  filter: grayscale(100%); 
+  transition: 0.3s;
+}
+
+.payment_icons:hover {
+  filter: grayscale(0%);   
+}
+
+
+
+
+
+/* ==========================================
+    CORES DOS LINKS (ALINHADO COM O SITE)
+   ========================================== */
+
+/* 1. Cor padrão: Cinza (#aaa) para ficar igual aos outros itens */
+.footer_col ul li a {
+    color: #aaa !important; 
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* 2. Evita que o link fique roxo após ser clicado */
+.footer_col ul li a:visited {
+    color: #aaa;
+}
+
+/* 3. HOVER: Cor Rosa (#EF007E) e leve deslocamento */
+.footer_col ul li a:hover {
+    color: #EF007E !important; 
+    padding-left: 5px; /* Efeito que você já tinha nos outros li */
+}
+
+/* Ajuste do LI pai para não brigar com o link */
+.footer_col li {
+    padding: 0; /* Zeramos aqui para o link controlar o movimento */
+    margin-bottom: 12px;
+}
+
+
+
+
+/* ==========================================
+   6. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================== */
+
+/* Tablets e Notebooks Médios */
+@media (max-width: 768px) {
+  .main_footer, 
+  .trust_bar {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .bottom_bar {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .trust_item {
+    justify-content: center;
+  }
+}
+
+/* Celulares e Telas Pequenas */
+@media (max-width: 480px) {
+  .social_icons_row {
+    justify-content: center;
+  }
+}

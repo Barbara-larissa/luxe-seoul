@@ -121,18 +121,6 @@
   box-shadow: 0 10px 30px rgba(239, 0, 126, 0.4);
 }
 
-.btn_voltar {
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 10;
-}
 
 /* RESPONSIVIDADE TABLET */
 @media (max-width: 950px) {

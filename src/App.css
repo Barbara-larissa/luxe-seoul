@@ -14,7 +14,15 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #fff;
+  background-color: #0d0d0d; /* Corrigido para manter a identidade dark premium */
+}
+
+/* Container Geral do Aplicativo */
+.app_container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 /* --- TÍTULO DA SEÇÃO (O TOQUE DE LUXO) --- */
@@ -24,18 +32,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 0 40px;
+  /* 🌟 AJUSTE CRUCIAL: Adicionado padding superior de 110px para 
+     o título começar elegantemente abaixo do Header Fixo */
+  padding: 110px 0 40px; 
   text-align: center;
 }
 
 .page_title {
   font-size: 3.5rem;
   font-weight: 900;
-  color: #1a1a1a;
+  color: #ffffff; /* Ajustado para branco para contrastar com o fundo escuro */
   letter-spacing: 5px;
   text-transform: uppercase;
   position: relative;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .page_title::after {
@@ -169,7 +179,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Garante que fique acima de tudo */
+  z-index: 100000; /* Aumentado para garantir que fique acima do header fixo */
 }
 
 .modal_content {
@@ -212,7 +222,6 @@ body {
   justify-content: center;
 }
 
-/* Resetando bordas padrão da biblioteca */
 .react-calendar {
   width: 100% !important;
   border: none !important;
@@ -220,7 +229,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Estilo do dia selecionado (Magenta) */
 .react-calendar__tile--active {
   background: var(--magenta) !important;
   color: white !important;
@@ -295,20 +303,14 @@ body {
   width: 100%;
   margin-top: 25px;
   padding: 16px;
-  
-  /* Visual Premium */
   background: var(--magenta);
   color: #fff;
   border: none;
   border-radius: 12px;
-  
-  /* Tipografia */
   font-size: 1rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  
-  /* Interação */
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(239, 0, 126, 0.3);
@@ -322,4 +324,104 @@ body {
 
 .modal_content .btn_confirmar:active {
   transform: translateY(0);
+}
+
+/* ==================================================
+   RESPONSIVIDADE 
+================================================== */
+
+@media (max-width: 850px) {
+  .title_section {
+    /* 🌟 No tablet e mobile, o header responsivo se adapta e o padding acompanha */
+    padding: 140px 0 30px; 
+  }
+
+  .page_title {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+  }
+  
+  .packages_grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Título da Seção */
+  .title_section {
+    /* 🌟 No mobile, o Header expande verticalmente, então aumentamos o respiro superior */
+    padding: 190px 15px 30px;
+  }
+
+  .page_title {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+
+  .page_title::after {
+    width: 50px;
+    height: 3px;
+    bottom: -10px;
+  }
+
+  /* Grid e Cards */
+  .packages_grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 10px 20px !important;
+  }
+
+  .cartao {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .conteudo {
+    padding: 15px;
+  }
+
+  .nomePacote {
+    font-size: 18px;
+  }
+
+  /* Modal Responsivo */
+  .modal_content {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .modal_price_total strong {
+    font-size: 1.3rem;
+  }
+  
+  .btn_confirmar {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ajuste para telas minúsculas (iPhone SE antigo) */
+@media (max-width: 350px) {
+  .title_section {
+    padding-top: 210px;
+  }
+
+  .page_title {
+    font-size: 1.3rem;
+  }
+  
+  .precoContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .botaoDetalhes {
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -160,12 +160,11 @@
   overflow: hidden;
 }
 
-
 .btn_primary {
   margin-top: 30px;
   padding: 18px 50px;
   background: #ef007e;
-  color: white;
+  color: white !important; /* Força o texto a ser branco */
   border: none;
   border-radius: 50px;
   font-weight: 800;
@@ -177,97 +176,174 @@
   text-transform: uppercase;
   display: inline-block;
   text-decoration: none;
-
+  border: 1px solid transparent; /* Evita que o botão "pule" ao aparecer a borda no hover */
 }
 
 .btn_primary:hover {
-
-  color: #ef007e;
+  /* REMOVIDO: color: #ef007e; <- Isso fazia o texto sumir */
+  color: white !important; 
+  background: #d1006e; /* Escurece um pouco o fundo para dar efeito de clique */
   transform: translateY(-5px);
   box-shadow: 0 15px 25px rgba(239, 0, 126, 0.5);
   border: 1px solid #ef007e;
 }
 
 
-
-
-
 /* --- RESPONSIVIDADE DO HERO --- */
 
+/* --- RESPONSIVIDADE COMPLETA E CORRIGIDA --- */
+
+/* Tablets e Notebooks Pequenos */
 @media (max-width: 1024px) {
   .hero_title {
-    font-size: 3.5rem;
-    letter-spacing: 5px;
+    font-size: 3.2rem;
+    letter-spacing: 4px;
   }
 }
 
+/* Tablets Portrait (Vertical) */
 @media (max-width: 768px) {
   .hero_section {
     height: 100vh;
-   
   }
 
   .hero_title {
-    font-size: 2.8rem;
-    letter-spacing: 3px;
-    line-height: 1.2;
+    font-size: 2.5rem; /* Ajustado para não estourar */
+    letter-spacing: 2px;
+    line-height: 1.1;
+    padding: 0 10px;
   }
 
   .hero_subtitle {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    padding: 0 15px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    margin-top: 15px;
   }
 
   .btn_primary {
     padding: 15px 35px;
     font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+}
+
+/* Celulares (Ajuste Crítico para o Título Enorme) */
+@media (max-width: 480px) {
+  /* Título ainda mais reduzido e elegante */
+  .hero_title {
+    font-size: 1.5rem; /* Diminuído para não dominar a tela */
+    letter-spacing: 2px;
+    line-height: 1.2;
+    font-weight: 900;
+    margin-bottom: 8px;
+    padding: 0 20px;
+  }
+
+  .hero_subtitle {
+    font-size: 0.85rem;
+    margin-top: 8px;
+    padding: 0 30px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Botão com animação de pulsação e brilho */
+  .btn_primary {
+    width: 75%; /* Menor e mais centralizado */
+    padding: 14px;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    
+    /* Animação de pulsação constante */
+    animation: pulseGlow 2s infinite ease-in-out;
+    transition: all 0.3s ease;
+  }
+
+  /* Efeito de toque (active) que simula o hover */
+  .btn_primary:active {
+    transform: scale(0.92);
+    background: #d1006e;
+    box-shadow: 0 0 20px #ef007e;
   }
 }
 
 @media (max-width: 480px) {
   .hero_title {
-    font-size: 2.2rem;
-        letter-spacing: 2px;
-  }
-
-  .hero_subtitle {
-    font-size: 1rem;
-    margin-top: 15px;
-    line-height: 1.4;
-  }
-
-
-  .petal {
-    width: 10px;
-    height: 10px;
-  }
-
-  .btn_primary {
-    width: 80%;
-
-    padding: 18px;
-    margin-top: 20px;
-  }
-
-
-  .hero_background {
-    animation: zoomInfinite 30s infinite alternate;
-  }
-}
-
-@media (max-height: 500px) and (orientation: landscape) {
-  .hero_title {
-    font-size: 1.8rem;
+    font-size: 2rem; 
+    letter-spacing: 2px;
+    line-height: 1.1;
+    font-weight: 900;
+    margin-bottom: 12px;
+    padding: 0 15px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   .hero_subtitle {
     font-size: 0.9rem;
+    margin-top: 10px;
+    padding: 0 25px;
+    line-height: 1.4;
+  }
+
+  /* BOTÃO COM ANIMAÇÃO DE PULSAÇÃO */
+  .btn_primary {
+    width: 80%;
+    padding: 16px;
+    margin-top: 25px;
+    font-size: 0.85rem;
+    display: inline-block;
+    position: relative;
+    
+    /* Chamada da animação que criamos abaixo */
+    animation: pulseModern 2.5s infinite ease-in-out;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(239, 0, 126, 0.3);
+  }
+
+  /* Feedback rápido ao tocar (importante para mobile) */
+  .btn_primary:active {
+    transform: scale(0.95);
+    background-color: #d1006e;
+    animation: none; /* Para a pulsação enquanto você clica */
+  }
+}
+
+/* --- KEYFRAMES DA PULSAÇÃO PREMIUM --- */
+@keyframes pulseModern {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 10px 20px rgba(239, 0, 126, 0.3);
+  }
+  50% {
+    transform: scale(1.04); /* Ele cresce levemente */
+    box-shadow: 0 15px 30px rgba(239, 0, 126, 0.6); /* O brilho aumenta junto */
+    background-color: #ff1a8e; /* Dá uma leve "acesa" na cor */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 10px 20px rgba(239, 0, 126, 0.3);
+  }
+}
+
+
+
+
+/* Telas deitadas (Landscape) - Correção de altura */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero_title {
+    font-size: 1.6rem;
+  }
+
+  .hero_subtitle {
+    font-size: 0.85rem;
     margin-top: 5px;
   }
 
   .btn_primary {
-    padding: 10px 25px;
+    padding: 8px 20px;
     margin-top: 10px;
+    font-size: 0.8rem;
   }
 }

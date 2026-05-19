@@ -1,0 +1,152 @@
+.careers_page_container {
+  background-color: #080808;
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.careers_content_box {
+  max-width: 800px;
+  width: 100%;
+}
+
+.btn_back_home {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.btn_back_home:hover {
+  background-color: #EF007E;
+  border-color: #EF007E;
+  transform: translateX(-3px);
+  box-shadow: 0 0 15px rgba(239, 0, 126, 0.4);
+}
+
+.tag_category {
+  color: #EF007E;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.main_careers_title {
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin: 10px 0;
+  font-weight: 800;
+}
+
+.careers_description {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  line-height: 1.6;
+}
+
+.magenta_divider_line {
+  height: 1px;
+  background: linear-gradient(to right, #EF007E, transparent);
+  margin: 30px 0 40px 0;
+}
+
+.about_team_block {
+  margin-bottom: 40px;
+}
+
+.about_team_block h2, .opportunities_section h2 {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.about_team_block p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #b0b0b0;
+  text-align: justify;
+}
+
+/* Estrutura do Grid de Vagas */
+.careers_grid_opportunities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.careers_card_vaga {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.careers_card_vaga:hover {
+  transform: translateY(-5px);
+  border-color: #EF007E;
+  background: rgba(239, 0, 126, 0.02);
+}
+
+.careers_card_vaga h3 {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.careers_card_vaga p {
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  line-height: 1.5;
+}
+
+/* Bloco de Ação do Formulário/CV */
+.careers_cta_box {
+  background: linear-gradient(135deg, rgba(239, 0, 126, 0.08), transparent);
+  border: 1px solid rgba(239, 0, 126, 0.15);
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.careers_cta_box h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.careers_cta_box p {
+  color: #b0b0b0;
+  margin-bottom: 25px;
+}
+
+.btn_submit_cv {
+  background-color: #EF007E;
+  color: white;
+  border: none;
+  padding: 12px 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn_submit_cv:hover {
+  background-color: #c70068;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(239, 0, 126, 0.4);
+}
+
+@media (max-width: 768px) {
+  .main_careers_title { font-size: 2.2rem; }
+}

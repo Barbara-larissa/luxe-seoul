@@ -1,10 +1,9 @@
-import { useState } from 'react'; // Passo 1: Importar o controle de estado
+import { useState } from 'react'; 
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
-import ModalLogin from '../Login/ModalLogin.jsx';// Passo 2: Importar o Modal (ajuste o caminho se necessário)
+import ModalLogin from '../Login/ModalLogin.jsx';
 
 export default function Header() {
-  // Passo 3: Criar o estado para saber se o modal está aberto ou não
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -24,6 +23,10 @@ export default function Header() {
           <nav className={styles.nav_menu}>
             <Link to="/" className={styles.nav_link}>INÍCIO</Link>
             <Link to="/pacotes" className={styles.nav_link}>PACOTES</Link>
+            
+            {/* LINK DE HOTÉIS CORRIGIDO AQUI */}
+            <Link to="/hoteis" className={styles.nav_link}>HOTÉIS</Link>
+
             <Link to="/sobre" className={styles.nav_link}>SOBRE</Link>
             <Link to="/contato" className={styles.nav_link}>CONTATO</Link>
 
@@ -32,7 +35,7 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Botão de ação - Agora com o onClick para abrir o modal */}
+          {/* Botão de ação */}
           <div className={styles.action_box}>
             <button
               className={styles.login_button}
@@ -44,7 +47,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Passo 4: Chamar o Modal aqui embaixo */}
       <ModalLogin
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

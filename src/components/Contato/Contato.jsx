@@ -1,15 +1,14 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import styles from './Contato.module.css';
+import BotaoVoltar from '../BotaoVoltar/BotaoVoltar';
 
 export default function Contato() {
   const navigate = useNavigate();
 
   return (
     <div className={styles.page_contato}>
-      <button className={styles.btn_voltar} onClick={() => navigate('/')}>
-        ← VOLTAR
-      </button>
+      <BotaoVoltar />
 
       <main className={styles.container}>
         {/* LADO ESQUERDO: INFOS */}

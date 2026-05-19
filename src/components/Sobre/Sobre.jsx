@@ -2,15 +2,13 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import styles from './Sobre.module.css';
 import cerejeirasImg from '../../assets/img/agencia.png'; // Use uma imagem mais limpa aqui
-
+import BotaoVoltar from '../BotaoVoltar/BotaoVoltar';
 export default function Sobre() {
   const navigate = useNavigate();
 
   return (
     <div className={styles.page_sobre}>
-      <button className={styles.btn_voltar} onClick={() => navigate('/')}>
-        ← VOLTAR
-      </button>
+      <BotaoVoltar />
 
       <div className={styles.split_container}>
         <motion.div 

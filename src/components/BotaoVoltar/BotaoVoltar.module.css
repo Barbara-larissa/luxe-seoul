@@ -1,0 +1,28 @@
+.btn_voltar {
+  /* Força o botão a se fixar na janela do navegador */
+  position: fixed !important;
+  top: 30px !important;
+  left: 5% !important;
+  z-index: 999999 !important;
+
+  /* Seu design Premium/Glassmorphism */
+  background: rgba(13, 13, 13, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn_voltar:hover {
+  border-color: #ef007e;
+  color: #fff;
+  background: #ef007e;
+  box-shadow: 0 0 15px rgba(239, 0, 126, 0.5);
+}

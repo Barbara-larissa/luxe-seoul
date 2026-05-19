@@ -1,0 +1,36 @@
+.btn_subir {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #EF007E;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(239, 0, 126, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Criando uma seta fina e elegante */
+.arrow {
+  width: 12px;
+  height: 12px;
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+  transform: rotate(45deg); /* Gira para virar uma seta para cima */
+  margin-top: 5px; /* Ajuste fino para centralizar visualmente */
+}
+
+.btn_subir:hover {
+  background-color: #d4006f;
+  transform: translateY(-5px);
+}
+@keyframes entrada {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

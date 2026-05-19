@@ -87,25 +87,6 @@
   background: linear-gradient(to right, #050505, transparent 50%);
 }
 
-.btn_voltar {
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  z-index: 100;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn_voltar:hover {
-  background: #ef007e;
-  border-color: #ef007e;
-}
-
 /* ==================================================
    RESPONSIVIDADE TABLET
 ================================================== */

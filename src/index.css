@@ -1,47 +1,24 @@
-:root {
-  --text: #4a4a4a;
-  --text-h: #0047a0;
-  --bg: #ffffff;
-
-  --accent-pink: #ffb7c5;
-  --accent-red: #cd2e3a;
-
-  --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.05);
-
-  --glass: rgba(255, 255, 255, 0.8);
-}
-
-/* RESET GLOBAL */
-
+/* index.css ou reset global */
 * {
   box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  width: 100%;
-
-  min-height: 100vh;
-
   margin: 0;
   padding: 0;
 }
 
-/* BODY */
-
-body {
-  background: var(--bg);
-
-  overflow-x: hidden;
-  overflow-y: auto;
-
-  font-family: 'Segoe UI', Roboto, sans-serif;
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: white;
+  font-family: 'Segoe UI', Roboto, 'Inter', sans-serif;
+  overflow-x: hidden; /* Evita quebras para os lados */
+  overflow-y: auto;   /* Permite o scroll natural do navegador */
 }
 
-/* ROOT */
-
 #root {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }

@@ -1,0 +1,99 @@
+.pageContainer {
+  background-color: #080808; /* Dark luxuoso de fundo */
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.contentWrapper {
+  max-width: 800px;
+  width: 100%;
+}
+
+.subtitle {
+  color: #EF007E; /* O Magenta premium do seu projeto */
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin: 10px 0 5px 0;
+  font-weight: 800;
+}
+
+.lastUpdated {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, #EF007E, transparent);
+  margin-bottom: 40px;
+}
+
+.section {
+  margin-bottom: 35px;
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #b0b0b0;
+  text-align: justify;
+}
+
+
+.backButton {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.backButton:hover {
+  background-color: #EF007E; /* O seu magenta premium */
+  border-color: #EF007E;
+  transform: translateX(-3px); /* Dá um leve impulso para a esquerda */
+  box-shadow: 0 0 15px rgba(239, 0, 126, 0.4);
+}
+
+.headerInfo {
+  margin-top: 10px;
+}
+
+
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 40px 20px;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+  }
+}
