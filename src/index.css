@@ -12,8 +12,8 @@ html, body {
   background-color: #0d0d0d;
   color: white;
   font-family: 'Segoe UI', Roboto, 'Inter', sans-serif;
-  overflow-x: hidden; /* Evita quebras para os lados */
-  overflow-y: auto;   /* Permite o scroll natural do navegador */
+  overflow-x: hidden; /* ← REMOVA daqui */
+  overflow-y: auto;
 }
 
 #root {
@@ -21,4 +21,5 @@ html, body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+    overflow-x: hidden;
 }

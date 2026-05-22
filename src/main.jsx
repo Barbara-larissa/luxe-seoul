@@ -35,10 +35,10 @@ createRoot(document.getElementById('root')).render(
         <Route path="/pacotes" element={<Pacotes />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/contato" element={<Contato />} />
-       <Route 
-  path="/hoteis" 
-  element={<PaginaHoteis />} 
-/>
+        <Route
+          path="/hoteis"
+          element={<PaginaHoteis />}
+        />
         {/* Seus links do footer continuam aqui... */}
       </Routes>
     </BrowserRouter>

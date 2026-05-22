@@ -1,18 +1,33 @@
+/* ==================================================
+    LAYOUT GLOBAL 
+================================================== */
+
+.app_container {
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+/* ==================================================
+    HEADER FIXO (EFEITO GLASSMORPHISM PREMIUM)
+================================================== */
+
 .header_container {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 9999;
-
-  height: 90px;
+  left: 0;
   width: 100%;
+  height: 80px;
+  z-index: 9999;
+  
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  background: rgba(10, 10, 10, 0.85); 
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(239, 0, 126, 0.2); 
-
+  border-bottom: 1px solid rgba(239, 0, 126, 0.15);
   display: flex;
   justify-content: center;
   align-items: center;
+  will-change: transform;
 }
 
 .header_content {
@@ -21,30 +36,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
-/* MENU */
+/* ==================================================
+    MENU DESKTOP
+================================================== */
+
 .nav_menu {
   display: flex;
-  gap: 40px;
+  gap: 35px;
   justify-content: center;
   flex-grow: 1;
 }
 
 .nav_link {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  padding: 8px 0;
 }
 
 .nav_link:hover {
   color: #EF007E;
-  text-shadow: 0 0 8px rgba(239, 0, 126, 0.6);
+  text-shadow: 0 0 12px rgba(239, 0, 126, 0.5);
 }
 
 .nav_link::after {
@@ -52,110 +71,217 @@
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #EF007E; 
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #EF007E;
   transition: width 0.3s ease;
+  box-shadow: 0 0 8px #EF007E;
 }
 
 .nav_link:hover::after {
   width: 100%;
 }
 
-/* LOGO */
+.mobile_login_container {
+  display: none; /* Escondido no desktop */
+}
+
+/* ==================================================
+    LOGO ESTILIZADA
+================================================== */
+
+.logo_link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.flag_icon {
+  width: 48px !important;
+  height: auto !important;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 8px rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.logo_link:hover .flag_icon {
+  transform: scale(1.05);
+}
+
+.logo_text_group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
 .logo_text {
-  color: white;
+  color: #ffffff;
   font-weight: 900;
-  font-size: 1.4rem;
-  letter-spacing: 1px;
+  font-size: 1.35rem;
+  letter-spacing: 1.5px;
 }
 
 .logo_highlight {
   color: #EF007E;
-  margin-left: 5px;
-  text-shadow: 0 0 10px rgba(239, 0, 126, 0.5);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-top: 2px;
+  text-shadow: 0 0 10px rgba(239, 0, 126, 0.4);
 }
 
-/* BOTÃO */
+/* ==================================================
+    BOTÃO LOGIN & COMPONENTES DE AÇÃO
+================================================== */
+
+.action_box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .login_button {
-  background: transparent;
+  background: linear-gradient(90deg, rgba(239, 0, 126, 0.1), rgba(239, 0, 126, 0.2));
   border: 1px solid #EF007E;
-  color: #EF007E;
-  padding: 8px 25px;
-  border-radius: 4px;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 20px;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(239, 0, 126, 0.1);
 }
 
 .login_button:hover {
   background: #EF007E;
   color: #fff;
-  box-shadow: 0 0 20px rgba(239, 0, 126, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(239, 0, 126, 0.5);
 }
 
+/* ==================================================
+    BOTÃO HAMBÚRGUER (ESCONDIDO NO DESKTOP)
+================================================== */
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10000;
+}
 
-/* --- RESPONSIVIDADE DO HEADER (COMPLETO E INTEGRADO) --- */
+.bar {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
 
-@media (max-width: 850px) {
-  .header_container {
-    height: auto;
-    padding: 15px 0;
+/* ==================================================
+    RESPONSIVIDADE (SISTEMA DE MENU HAMBÚRGUER MOBILE)
+================================================== */
+
+@media (max-width: 900px) {
+  .desktop_login_container {
+    display: none; /* Esconde o botão solto no topo */
   }
 
-  .header_content {
-    flex-direction: column; 
-    gap: 15px;
+  .hamburger {
+    display: flex; /* Ativa o botão hambúrguer */
   }
 
+  /* Transformação do Hambúrguer em "X" quando ativo */
+  .hamburger_active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: #EF007E;
+  }
+
+  .hamburger_active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger_active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: #EF007E;
+  }
+
+  /* Transformação do Menu em uma Cortina Lateral Premium */
   .nav_menu {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important; /* Força todos na mesma linha */
-    gap: 15px !important;
-    order: 3;  
+    position: fixed;
+    top: 0;
+    right: -100%; /* Totalmente escondido à direita */
+    width: 280px;
+    height: 100vh;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(239, 0, 126, 0.2);
+    
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 100px 40px;
+    gap: 30px;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Quando o menu abre, desliza para a tela */
+  .nav_menu_open {
+    right: 0;
   }
 
   .nav_link {
-    font-size: 0.72rem !important; /* Ajuste sutil para caber lado a lado */
-    letter-spacing: 0.5px !important;
-    white-space: nowrap !important; /* Impede quebra de linha no texto */
-  }
-
-  .login_button {
-    padding: 6px 20px;
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .header_content {
-    padding: 0 10px;
-  }
-
-  .logo_text {
-    font-size: 1.2rem;
-  }
-
-  .nav_menu {
-    flex-wrap: nowrap !important; /* Garante linha única no celular */
-    justify-content: space-between !important;
-    width: 100% !important;
-    gap: 5px !important; /* Espaço reduzido para o encaixe perfeito */
-  }
-
-  .nav_link {
-    font-size: 0.58rem !important; /* Letra calculada para a tela de 390px */
-    letter-spacing: 0px !important;
+    font-size: 1.1rem; /* Links maiores no dedão do mobile */
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .nav_link::after {
-    display: none;
+    display: none; /* Remove a linha horizontal no mobile */
   }
 
-  .login_button {
-    width: 100%; 
+  .mobile_login_container {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .mobile_login_container .login_button {
+    width: 100%;
     text-align: center;
+    padding: 12px;
+  }
+}
+
+/* Ajustes finos para telas muito pequenas */
+@media (max-width: 480px) {
+  .header_container {
+    height: 70px;
+  }
+
+  .flag_icon {
+    width: 40px !important;
+  }
+
+  .logo_text {
+    font-size: 1.15rem;
+  }
+
+  .logo_highlight {
+    font-size: 0.65rem;
   }
 }

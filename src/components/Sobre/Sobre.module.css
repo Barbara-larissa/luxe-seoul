@@ -2,7 +2,7 @@
   background-color: #050505; 
   min-height: 100vh;
   color: white;
-  overflow-x: hidden; /* Ajustado de 'overflow' para 'overflow-x' para permitir o scroll vertical */
+  overflow-x: hidden;
 }
 
 .split_container {

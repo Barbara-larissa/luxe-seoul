@@ -17,14 +17,13 @@ body {
   background-color: #0d0d0d; /* Corrigido para manter a identidade dark premium */
 }
 
-/* Container Geral do Aplicativo */
 .app_container {
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
-}
 
+}
 /* --- TÍTULO DA SEÇÃO (O TOQUE DE LUXO) --- */
 .title_section {
   width: 100%;
@@ -32,9 +31,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* 🌟 AJUSTE CRUCIAL: Adicionado padding superior de 110px para 
-     o título começar elegantemente abaixo do Header Fixo */
-  padding: 110px 0 40px; 
+padding: 40px 0 40px; 
   text-align: center;
 }
 
@@ -46,6 +43,7 @@ body {
   text-transform: uppercase;
   position: relative;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .page_title::after {
@@ -333,7 +331,7 @@ body {
 @media (max-width: 850px) {
   .title_section {
     /* 🌟 No tablet e mobile, o header responsivo se adapta e o padding acompanha */
-    padding: 140px 0 30px; 
+     padding: 40px 0 40px;
   }
 
   .page_title {
@@ -352,7 +350,7 @@ body {
   /* Título da Seção */
   .title_section {
     /* 🌟 No mobile, o Header expande verticalmente, então aumentamos o respiro superior */
-    padding: 190px 15px 30px;
+  padding: 30px 15px 30px;
   }
 
   .page_title {
@@ -407,7 +405,7 @@ body {
 /* Ajuste para telas minúsculas (iPhone SE antigo) */
 @media (max-width: 350px) {
   .title_section {
-    padding-top: 210px;
+      padding-top: 30px;
   }
 
   .page_title {

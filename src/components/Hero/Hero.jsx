@@ -31,7 +31,7 @@ export default function Hero() {
             A magia das cerejeiras na Copa 2026.
           </p>
 
-          {/* Agora o navigate vai funcionar! */}
+          {}
           <button 
             className={styles.btn_primary} 
             onClick={() => navigate('/pacotes')}

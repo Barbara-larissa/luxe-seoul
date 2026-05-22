@@ -55,11 +55,11 @@ function App() {
   return (
     <div className="app_container">
       <Header />
-      
+
       <section className="hero_section">
         <Hero />
       </section>
-      
+
       <main className="main_content">
         <div className="title_section">
           <h2 className="page_title">Pacotes Coreia do Sul 2026</h2>
@@ -69,11 +69,11 @@ function App() {
         <section className="packages_grid">
           {pacotesCoreia.map((p) => (
             <div className="package_item" key={p.id}>
-              <Card 
-                nome={p.nome} 
-                preco={p.preco} 
-                imagem={p.imagem} 
-                aoReservar={() => setPacoteAtivo(p)} 
+              <Card
+                nome={p.nome}
+                preco={p.preco}
+                imagem={p.imagem}
+                aoReservar={() => setPacoteAtivo(p)}
               />
             </div>
           ))}
@@ -87,35 +87,35 @@ function App() {
             <button onClick={() => setPacoteAtivo(null)} className="btn_fechar">✕</button>
             <h2 className="modal_title">Agendar Viagem</h2>
             <p className="modal_subtitle">Destino: <strong>{pacoteAtivo.nome}</strong></p>
-            
+
             <div className="calendar_container">
-              <DateRange 
-                onChange={item => setState([item.selection])} 
-                ranges={state} 
-                locale={ptBR} 
-                rangeColors={['#EF007E']} 
+              <DateRange
+                onChange={item => setState([item.selection])}
+                ranges={state}
+                locale={ptBR}
+                rangeColors={['#EF007E']}
               />
             </div>
 
             <div className="modal_grid_inputs">
               <div className="modal_input_group">
                 <label>Adultos:</label>
-                <input 
-                  type="number" 
-                  min="1" 
-                  value={adultos} 
-                  onChange={(e) => setAdultos(e.target.value)} 
-                  className="modal_input" 
+                <input
+                  type="number"
+                  min="1"
+                  value={adultos}
+                  onChange={(e) => setAdultos(e.target.value)}
+                  className="modal_input"
                 />
               </div>
               <div className="modal_input_group">
                 <label>Crianças:</label>
-                <input 
-                  type="number" 
-                  min="0" 
-                  value={criancas} 
-                  onChange={(e) => setCriancas(e.target.value)} 
-                  className="modal_input" 
+                <input
+                  type="number"
+                  min="0"
+                  value={criancas}
+                  onChange={(e) => setCriancas(e.target.value)}
+                  className="modal_input"
                 />
               </div>
             </div>

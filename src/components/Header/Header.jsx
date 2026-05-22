@@ -1,10 +1,19 @@
 import { useState } from 'react'; 
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
-import ModalLogin from '../Login/ModalLogin.jsx';
+import ModalLogin from '../Hero/Login/ModalLogin.jsx';
 
 export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <>
@@ -13,37 +22,62 @@ export default function Header() {
 
           {/* Logo */}
           <div className={styles.logo_box}>
-            <Link to="/" className={styles.logo_link}>
-              <span className={styles.logo_text}>K-TRAVEL</span>
-              <span className={styles.logo_highlight}>TURISMO</span>
+            <Link to="/" className={styles.logo_link} onClick={closeMenu}>
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" 
+                alt="Bandeira da Coreia do Sul" 
+                className={styles.flag_icon} 
+              />
+              <div className={styles.logo_text_group}>
+                <span className={styles.logo_text}>K-TRAVEL</span>
+                <span className={styles.logo_highlight}>TURISMO</span>
+              </div>
             </Link>
           </div>
 
-          {/* Menu de navegação */}
-          <nav className={styles.nav_menu}>
-            <Link to="/" className={styles.nav_link}>INÍCIO</Link>
-            <Link to="/pacotes" className={styles.nav_link}>PACOTES</Link>
+          {/* Menu de navegação (Desktop e Mobile) */}
+          <nav className={`${styles.nav_menu} ${isMenuOpen ? styles.nav_menu_open : ''}`}>
+            <Link to="/" className={styles.nav_link} onClick={closeMenu}>INÍCIO</Link>
+            <Link to="/pacotes" className={styles.nav_link} onClick={closeMenu}>PACOTES</Link>
+            <Link to="/hoteis" className={styles.nav_link} onClick={closeMenu}>HOTÉIS</Link>
+            <Link to="/sobre" className={styles.nav_link} onClick={closeMenu}>SOBRE</Link>
+            <Link to="/contato" className={styles.nav_link} onClick={closeMenu}>CONTATO</Link>
+            <Link to="/turismo" className={styles.nav_link} onClick={closeMenu}>TURISMO</Link>
             
-            {/* LINK DE HOTÉIS CORRIGIDO AQUI */}
-            <Link to="/hoteis" className={styles.nav_link}>HOTÉIS</Link>
-
-            <Link to="/sobre" className={styles.nav_link}>SOBRE</Link>
-            <Link to="/contato" className={styles.nav_link}>CONTATO</Link>
-
-            <Link to="/turismo" className={styles.nav_link}>
-              TURISMO
-            </Link>
+            {/* Botão de Login duplicado dentro do menu mobile para melhorar a usabilidade */}
+            <div className={styles.mobile_login_container}>
+              <button
+                className={styles.login_button}
+                onClick={() => { setIsModalOpen(true); closeMenu(); }}
+              >
+                LOGIN
+              </button>
+            </div>
           </nav>
 
-          {/* Botão de ação */}
+          {/* Área de Ações do Desktop (Botão de Login e o Hambúrguer) */}
           <div className={styles.action_box}>
-            <button
-              className={styles.login_button}
-              onClick={() => setIsModalOpen(true)}
+            <div className={styles.desktop_login_container}>
+              <button
+                className={styles.login_button}
+                onClick={() => setIsModalOpen(true)}
+              >
+                LOGIN
+              </button>
+            </div>
+
+            {/* Botão Hambúrguer Premium com animação CSS */}
+            <button 
+              className={`${styles.hamburger} ${isMenuOpen ? styles.hamburger_active : ''}`}
+              onClick={toggleMenu}
+              aria-label="Menu"
             >
-              LOGIN
+              <span className={styles.bar}></span>
+              <span className={styles.bar}></span>
+              <span className={styles.bar}></span>
             </button>
           </div>
+
         </div>
       </header>
 

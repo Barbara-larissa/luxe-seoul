@@ -1,12 +1,19 @@
+/* ==================================================
+   ESTILIZAÇÃO DA PÁGINA DE CONTATO
+================================================== */
+
 .page_contato {
   background-color: #050505;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 5%;
+
+  /* 🔥 CORREÇÃO DO HEADER FIXO */
+  padding: 140px 5% 80px;
+
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .container {
@@ -17,7 +24,10 @@
   align-items: center;
 }
 
-/* LADO ESQUERDO */
+/* ==================================================
+   LADO ESQUERDO
+================================================== */
+
 .tag {
   color: #ef007e;
   letter-spacing: 5px;
@@ -62,13 +72,20 @@
   font-size: 1.1rem;
 }
 
-/* FORMULÁRIO GLASSMORPHISM */
+/* ==================================================
+   FORMULÁRIO GLASSMORPHISM
+================================================== */
+
 .glass_form {
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(20px);
+
   padding: 50px;
+
   border-radius: 30px;
+
   border: 1px solid rgba(255, 255, 255, 0.05);
+
   width: 100%;
   min-width: 450px;
 }
@@ -86,97 +103,139 @@
   letter-spacing: 2px;
 }
 
-.input_group input, .input_group textarea {
+.input_group input,
+.input_group textarea {
   background: rgba(255, 255, 255, 0.05);
+
   border: 1px solid rgba(255, 255, 255, 0.1);
+
   padding: 15px;
+
   border-radius: 10px;
+
   color: white;
+
   outline: none;
+
   transition: 0.3s;
 }
 
-.input_group input:focus, .input_group textarea:focus {
+.input_group input:focus,
+.input_group textarea:focus {
   border-color: #ef007e;
   background: rgba(255, 255, 255, 0.08);
 }
 
 .btn_enviar {
   width: 100%;
+
   padding: 18px;
+
   background: #ef007e;
+
   border: none;
+
   color: white;
+
   font-weight: 900;
+
   letter-spacing: 2px;
+
   border-radius: 12px;
+
   cursor: pointer;
+
   position: relative;
+
   overflow: hidden;
+
   transition: 0.3s;
 }
 
 .btn_enviar:hover {
   transform: translateY(-3px);
+
   box-shadow: 0 10px 30px rgba(239, 0, 126, 0.4);
 }
 
-/* --- 🌟 MAPA ATUALIZADO: MAIS VISÍVEL E COM BORDA PREMIUM --- */
+/* ==================================================
+   MAPA
+================================================== */
 
 .map_wrapper {
   margin-top: 40px;
+
   width: 100%;
   height: 250px;
+
   border-radius: 18px;
+
   overflow: hidden;
-  /* Borda na cor magenta com transparência e brilho neon em volta */
-  border: 2px solid rgba(239, 0, 126, 0.4); 
-  box-shadow: 0 0 20px rgba(239, 0, 126, 0.15), 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  border: 2px solid rgba(239, 0, 126, 0.4);
+
+  box-shadow:
+    0 0 20px rgba(239, 0, 126, 0.15),
+    0 10px 30px rgba(0, 0, 0, 0.5);
+
   transition: all 0.4s ease;
 }
 
-/* Deixamos o mapa bem nítido tirando o tom fosco exagerado */
 .google_map {
   filter: invert(90%) hue-rotate(180deg) grayscale(40%);
-  opacity: 0.85; /* Muito mais visível por padrão */
+  opacity: 0.85;
   transition: all 0.4s ease;
 }
 
-/* Efeito ao passar o mouse */
 .map_wrapper:hover {
-  border-color: #ef007e; /* Acende a borda 100% */
-  box-shadow: 0 0 25px rgba(239, 0, 126, 0.40), 0 10px 30px rgba(0, 0, 0, 0.6);
+  border-color: #ef007e;
+
+  box-shadow:
+    0 0 25px rgba(239, 0, 126, 0.40),
+    0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 .map_wrapper:hover .google_map {
   opacity: 1;
-  filter: invert(90%) hue-rotate(180deg) grayscale(0%); /* Mostra as cores reais do mapa no hover */
+
+  filter:
+    invert(90%)
+    hue-rotate(180deg)
+    grayscale(0%);
 }
 
+/* ==================================================
+   RESPONSIVIDADE TABLET
+================================================== */
 
-/* RESPONSIVIDADE TABLET E MOBILE */
 @media (max-width: 950px) {
-  .container { 
-    flex-direction: column; 
-    gap: 60px; 
-    text-align: center; 
+
+  .container {
+    flex-direction: column;
+
+    gap: 60px;
+
+    text-align: center;
+
     padding-top: 40px;
   }
-  
+
   .info_side {
     width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .glass_form { 
-    min-width: 100%; 
-    padding: 30px; 
+  .glass_form {
+    min-width: 100%;
+
+    padding: 30px;
   }
 
-  .info_side h1 { 
-    font-size: 2.8rem; 
+  .info_side h1 {
+    font-size: 2.8rem;
   }
 
   .contact_list {
@@ -187,50 +246,60 @@
   .map_wrapper {
     width: 100%;
     max-width: 500px;
+
     height: 220px;
+
     margin-top: 40px;
   }
 }
 
+/* ==================================================
+   RESPONSIVIDADE MOBILE
+================================================== */
+
 @media (max-width: 480px) {
+
   .page_contato {
-    padding: 100px 20px; 
+
+    /* 🔥 MAIS ESPAÇO PRO HEADER FIXO */
+    padding: 140px 20px 80px;
   }
 
-  .info_side h1 { 
-    font-size: 2.2rem; 
+  .info_side h1 {
+    font-size: 2.2rem;
   }
 
   .info_side p {
     font-size: 1rem;
+
     margin-bottom: 30px;
   }
 
   .glass_form {
     padding: 25px 20px;
+
     border-radius: 20px;
+
+    min-width: 100%;
   }
 
   .map_wrapper {
     height: 200px;
   }
 
-  .btn_voltar {
-    top: 20px;
-    left: 20px;
-    padding: 8px 15px;
-    font-size: 0.8rem;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-  }
-
   .btn_enviar {
     padding: 15px;
+
     font-size: 0.9rem;
   }
 }
 
+/* ==================================================
+   TELAS BAIXAS
+================================================== */
+
 @media (max-height: 700px) {
+
   .page_contato {
     align-items: flex-start;
   }

@@ -4,16 +4,11 @@
 
 .page_turismo {
   background-color: #0d0d0d;
-
   min-height: 100vh;
   width: 100%;
-
-  padding: 80px 5%;
-
+  padding: 110px 5% 80px;
   color: white;
-
   font-family: 'Inter', sans-serif;
-
   position: relative;
   overflow-x: hidden;
 }
@@ -29,11 +24,8 @@
 
 .page_title {
   font-size: 2.5rem;
-
   letter-spacing: 4px;
-
   font-weight: 300;
-
   color: #ffffff;
 }
 
@@ -43,12 +35,9 @@
 
 .cards_container {
   max-width: 1100px;
-
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
-
   gap: 30px;
 }
 
@@ -58,33 +47,23 @@
 
 .turismo_card {
   display: flex;
-
   background: rgba(255, 255, 255, 0.05);
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   border: 1px solid rgba(255, 255, 255, 0.1);
-
   border-radius: 20px;
-
   overflow: hidden;
-
   height: 280px;
-
   transition:
     transform 0.3s ease,
     border 0.3s ease,
     box-shadow 0.3s ease;
-
   cursor: pointer;
 }
 
 .turismo_card:hover {
   transform: translateY(-5px);
-
   border: 1px solid #ef007e;
-
   box-shadow: 0 10px 30px rgba(239, 0, 126, 0.2);
 }
 
@@ -94,29 +73,16 @@
 
 .img_wrapper {
   flex: 1.5;
-
   overflow: hidden;
-
   position: relative;
 }
 
 .img_wrapper img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
-  mask-image: linear-gradient(
-    to right,
-    black 80%,
-    transparent 100%
-  );
-
-  -webkit-mask-image: linear-gradient(
-    to right,
-    black 80%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
 }
 
 /* ==================================================
@@ -125,9 +91,7 @@
 
 .card_content {
   flex: 1;
-
   padding: 40px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -135,29 +99,21 @@
 
 .tag_text {
   color: #ef007e;
-
   font-size: 0.8rem;
-
   font-weight: bold;
-
   letter-spacing: 2px;
-
   margin-bottom: 10px;
 }
 
 .card_content h3 {
   font-size: 1.8rem;
-
   margin-bottom: 15px;
-
   font-weight: 600;
 }
 
 .card_content p {
   color: #bbbbbb;
-
   font-size: 1rem;
-
   line-height: 1.5;
 }
 
@@ -170,67 +126,123 @@
 }
 
 .cards_container .turismo_card:nth-child(even) .img_wrapper img {
-  mask-image: linear-gradient(
-    to left,
-    black 80%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to left, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, black 80%, transparent 100%);
+}
 
-  -webkit-mask-image: linear-gradient(
-    to left,
-    black 80%,
-    transparent 100%
-  );
+/* BOTÃO SAIBA MAIS */
+.btn_saiba_mais {
+  margin-top: 20px;
+  padding: 10px 24px;
+  background: transparent;
+  border: 1px solid #ef007e;
+  color: #ef007e;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.btn_saiba_mais:hover {
+  background: #ef007e;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(239, 0, 126, 0.4);
 }
 
 /* ==================================================
-   BOTÃO VOLTAR FIXO GLOBAL
+   MODAL
 ================================================== */
 
-:global(.btn_voltar) {
-  position: fixed !important;
-
-  top: 30px !important;
-  left: 5% !important;
-
-  z-index: 999999 !important;
-
-  background: rgba(13, 13, 13, 0.8);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  border: 1px solid rgba(255, 255, 255, 0.15);
-
-  color: white;
-
-  padding: 10px 24px;
-
-  border-radius: 50px;
-
-  cursor: pointer;
-
-  font-weight: 600;
-
-  letter-spacing: 1px;
-
-  transition: all 0.3s ease;
-
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-
-  isolation: isolate;
-
-  pointer-events: auto;
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
 }
 
-:global(.btn_voltar:hover) {
-  border-color: #ef007e;
+.modal_content {
+  background: #1a1a1a;
+  border: 1px solid rgba(239, 0, 126, 0.3);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 650px;
+  max-height: 85vh;
 
+  display: flex;              /* 🔥 CORREÇÃO IMPORTANTE */
+  flex-direction: column;     /* 🔥 CORREÇÃO IMPORTANTE */
+
+  overflow: hidden;
+  padding: 40px;
+  position: relative;
+}
+
+.btn_fechar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
   color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
 
+.btn_fechar:hover {
   background: #ef007e;
+}
 
-  box-shadow: 0 0 15px rgba(239, 0, 126, 0.5);
+.modal_titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  padding-right: 30px;
+}
+
+.modal_img_wrapper {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.modal_img_wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔥 CORREÇÃO PRINCIPAL DO BUG */
+.modal_texto {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  overflow-y: auto;   /* 🔥 agora funciona no mobile */
+  max-height: 55vh;   /* 🔥 impede sumir texto */
+}
+
+.modal_texto p {
+  color: #cccccc;
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 /* ==================================================
@@ -239,12 +251,11 @@
 
 @media (max-width: 992px) {
   .page_turismo {
-    padding: 100px 20px 50px;
+    padding: 130px 20px 50px;
   }
 
   .page_title {
     font-size: clamp(1.8rem, 5vw, 2.3rem);
-
     letter-spacing: 2px;
   }
 
@@ -255,19 +266,14 @@
   .turismo_card,
   .cards_container .turismo_card:nth-child(even) {
     flex-direction: column !important;
-
     height: auto;
-
     max-width: 500px;
-
     margin: 0 auto;
   }
 
   .img_wrapper {
     width: 100%;
-
     height: 240px;
-
     flex: none;
   }
 
@@ -279,8 +285,26 @@
 
   .card_content {
     padding: 25px;
-
     text-align: center;
+  }
+
+  .modal_content {
+    width: 92%;
+    max-width: 600px;
+    padding: 28px;
+  }
+
+  .modal_titulo {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  .modal_img_wrapper {
+    height: 180px;
+  }
+
+  .modal_texto p {
+    font-size: 0.92rem;
   }
 }
 
@@ -289,19 +313,67 @@
 ================================================== */
 
 @media (max-width: 480px) {
-  .card_content {
-    padding: 30px 22px;
+  .page_turismo {
+    padding: 150px 20px 50px;
+  }
 
+  .card_content {
+    padding: 26px 18px;
     text-align: left;
   }
 
-  :global(.btn_voltar) {
-    top: 20px !important;
+  .modal_overlay {
+    padding: 15px;
+    align-items: center;
+  }
 
-    left: 20px !important;
+  .modal_content {
+    width: 95%;
+    max-height: 85vh;
+    border-radius: 16px;
+    padding: 18px;
+    animation: slideUp 0.25s ease;
+  }
 
-    padding: 8px 15px;
+  .modal_titulo {
+    font-size: 1.1rem;
+  }
 
+  .modal_img_wrapper {
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  .modal_texto {
+    gap: 12px;
+
+    overflow-y: auto;   /* 🔥 redundância segura mobile */
+    max-height: 55vh;   /* 🔥 garante visibilidade */
+  }
+
+  .modal_texto p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .btn_fechar {
+    width: 30px;
+    height: 30px;
     font-size: 0.8rem;
+  }
+}
+
+/* ==================================================
+   ANIMAÇÃO
+================================================== */
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

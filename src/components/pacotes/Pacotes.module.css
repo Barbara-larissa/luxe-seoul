@@ -5,14 +5,13 @@
 .page_pacotes {
   background-color: #0d0d0d;
   min-height: 100vh;
-  padding: 40px 5% 100px 5%;
+  padding: 140px 5% 100px 5%;
   color: white;
   font-family: 'Inter', sans-serif;
   position: relative;
   overflow-x: hidden;
-  isolation: auto; /* Garante que a página não force um contexto de empilhamento rígido */
+  isolation: auto;
 }
-
 /* ==================================================
    HEADER
 ================================================== */
@@ -233,4 +232,4 @@
     padding: 10px 20px;
     font-size: 0.9rem;
   }
-}
+} 

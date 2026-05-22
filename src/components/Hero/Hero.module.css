@@ -1,55 +1,74 @@
+/* --- HERO PRINCIPAL --- */
+
 .hero_section {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 90px); /* 🔥 CORREÇÃO PRINCIPAL (compensa header fixo) */
   width: 100%;
   overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  box-sizing: border-box;
 }
+
+/* --- BACKGROUND --- */
 
 .hero_background {
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   animation: zoomInfinite 20s infinite alternate;
   z-index: 0;
-
 }
+
+/* --- ZOOM ANIMATION --- */
 
 @keyframes zoomInfinite {
   from {
     transform: scale(1);
   }
-
   to {
     transform: scale(1.1);
   }
 }
 
-/* --- ANIMAÇÃO DAS PÉTALAS --- */
+/* --- PETALAS --- */
+
 .petals_container {
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
+
   pointer-events: none;
 }
+
+/* --- PETAL --- */
 
 .petal {
   position: absolute;
   background-color: #ffb7c5;
+
   border-radius: 150% 0 150% 0;
+
   width: 15px;
   height: 15px;
+
   opacity: 0.7;
   top: -10%;
+
   animation: fall linear infinite;
 }
 
@@ -59,53 +78,31 @@
   height: 10px;
 }
 
-.petal:nth-child(1) {
-  left: 10%;
-  animation-duration: 7s;
-  animation-delay: 1s;
-}
+/* posições */
+.petal:nth-child(1) { left: 10%; animation-duration: 7s; animation-delay: 1s; }
+.petal:nth-child(2) { left: 30%; animation-duration: 9s; animation-delay: 3s; }
+.petal:nth-child(3) { left: 50%; animation-duration: 6s; animation-delay: 0s; }
+.petal:nth-child(4) { left: 70%; animation-duration: 10s; animation-delay: 5s; }
+.petal:nth-child(5) { left: 90%; animation-duration: 8s; animation-delay: 2s; }
 
-.petal:nth-child(2) {
-  left: 30%;
-  animation-duration: 9s;
-  animation-delay: 3s;
-}
-
-.petal:nth-child(3) {
-  left: 50%;
-  animation-duration: 6s;
-  animation-delay: 0s;
-}
-
-.petal:nth-child(4) {
-  left: 70%;
-  animation-duration: 10s;
-  animation-delay: 5s;
-}
-
-.petal:nth-child(5) {
-  left: 90%;
-  animation-duration: 8s;
-  animation-delay: 2s;
-}
+/* --- FALL ANIMATION --- */
 
 @keyframes fall {
   0% {
     transform: translateY(0vh) rotate(0deg);
     opacity: 0;
   }
-
   10% {
     opacity: 1;
   }
-
   100% {
     transform: translateY(110vh) rotate(720deg);
     opacity: 0.2;
   }
 }
 
-/* --- TEXTO E OVERLAY --- */
+/* --- OVERLAY --- */
+
 .hero_overlay {
   position: relative;
   z-index: 2;
@@ -116,6 +113,8 @@
   z-index: 10;
 }
 
+/* --- TITULO --- */
+
 .hero_title {
   font-size: 5rem;
   font-weight: 900;
@@ -123,17 +122,18 @@
   letter-spacing: 8px;
 }
 
+/* --- ANO --- */
+
 .hero_year {
   color: #EF007E;
   font-weight: 900;
-
- 
-
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8),
-
+  text-shadow:
+    2px 2px 0px rgba(0, 0, 0, 0.8),
     0 0 15px rgba(239, 0, 126, 0.7),
     3px 3px 10px rgba(0, 0, 0, 0.6);
 }
+
+/* --- SUBTITLE --- */
 
 .hero_subtitle {
   font-size: 1.8rem;
@@ -144,56 +144,52 @@
   font-weight: 300;
   text-transform: uppercase;
 
-
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-
 
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.hero_section {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
+/* --- BOTÃO --- */
 
 .btn_primary {
   margin-top: 30px;
   padding: 18px 50px;
+
   background: #ef007e;
-  color: white !important; /* Força o texto a ser branco */
+  color: white !important;
+
   border: none;
   border-radius: 50px;
+
   font-weight: 800;
   font-size: 1rem;
   letter-spacing: 2px;
+
   cursor: pointer;
   transition: all 0.3s ease;
+
   box-shadow: 0 10px 20px rgba(239, 0, 126, 0.3);
+
   text-transform: uppercase;
   display: inline-block;
   text-decoration: none;
-  border: 1px solid transparent; /* Evita que o botão "pule" ao aparecer a borda no hover */
+
+  border: 1px solid transparent;
 }
 
 .btn_primary:hover {
-  /* REMOVIDO: color: #ef007e; <- Isso fazia o texto sumir */
-  color: white !important; 
-  background: #d1006e; /* Escurece um pouco o fundo para dar efeito de clique */
+  background: #d1006e;
+  color: white !important;
   transform: translateY(-5px);
+
   box-shadow: 0 15px 25px rgba(239, 0, 126, 0.5);
   border: 1px solid #ef007e;
 }
 
+/* --- RESPONSIVO --- */
 
-/* --- RESPONSIVIDADE DO HERO --- */
-
-/* --- RESPONSIVIDADE COMPLETA E CORRIGIDA --- */
-
-/* Tablets e Notebooks Pequenos */
 @media (max-width: 1024px) {
   .hero_title {
     font-size: 3.2rem;
@@ -201,14 +197,13 @@
   }
 }
 
-/* Tablets Portrait (Vertical) */
 @media (max-width: 768px) {
   .hero_section {
-    height: 100vh;
+    height: calc(100vh - 90px);
   }
 
   .hero_title {
-    font-size: 2.5rem; /* Ajustado para não estourar */
+    font-size: 2.5rem;
     letter-spacing: 2px;
     line-height: 1.1;
     padding: 0 10px;
@@ -224,54 +219,12 @@
   .btn_primary {
     padding: 15px 35px;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
-  }
-}
-
-/* Celulares (Ajuste Crítico para o Título Enorme) */
-@media (max-width: 480px) {
-  /* Título ainda mais reduzido e elegante */
-  .hero_title {
-    font-size: 1.5rem; /* Diminuído para não dominar a tela */
-    letter-spacing: 2px;
-    line-height: 1.2;
-    font-weight: 900;
-    margin-bottom: 8px;
-    padding: 0 20px;
-  }
-
-  .hero_subtitle {
-    font-size: 0.85rem;
-    margin-top: 8px;
-    padding: 0 30px;
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  /* Botão com animação de pulsação e brilho */
-  .btn_primary {
-    width: 75%; /* Menor e mais centralizado */
-    padding: 14px;
-    margin-top: 20px;
-    font-size: 0.8rem;
-    position: relative;
-    overflow: hidden;
-    
-    /* Animação de pulsação constante */
-    animation: pulseGlow 2s infinite ease-in-out;
-    transition: all 0.3s ease;
-  }
-
-  /* Efeito de toque (active) que simula o hover */
-  .btn_primary:active {
-    transform: scale(0.92);
-    background: #d1006e;
-    box-shadow: 0 0 20px #ef007e;
   }
 }
 
 @media (max-width: 480px) {
   .hero_title {
-    font-size: 2rem; 
+    font-size: 2rem;
     letter-spacing: 2px;
     line-height: 1.1;
     font-weight: 900;
@@ -287,50 +240,15 @@
     line-height: 1.4;
   }
 
-  /* BOTÃO COM ANIMAÇÃO DE PULSAÇÃO */
   .btn_primary {
     width: 80%;
     padding: 16px;
     margin-top: 25px;
     font-size: 0.85rem;
-    display: inline-block;
-    position: relative;
-    
-    /* Chamada da animação que criamos abaixo */
-    animation: pulseModern 2.5s infinite ease-in-out;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(239, 0, 126, 0.3);
-  }
-
-  /* Feedback rápido ao tocar (importante para mobile) */
-  .btn_primary:active {
-    transform: scale(0.95);
-    background-color: #d1006e;
-    animation: none; /* Para a pulsação enquanto você clica */
   }
 }
 
-/* --- KEYFRAMES DA PULSAÇÃO PREMIUM --- */
-@keyframes pulseModern {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 10px 20px rgba(239, 0, 126, 0.3);
-  }
-  50% {
-    transform: scale(1.04); /* Ele cresce levemente */
-    box-shadow: 0 15px 30px rgba(239, 0, 126, 0.6); /* O brilho aumenta junto */
-    background-color: #ff1a8e; /* Dá uma leve "acesa" na cor */
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 10px 20px rgba(239, 0, 126, 0.3);
-  }
-}
-
-
-
-
-/* Telas deitadas (Landscape) - Correção de altura */
+/* landscape */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero_title {
     font-size: 1.6rem;
