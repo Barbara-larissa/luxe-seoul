@@ -23,9 +23,13 @@ O **Luxe Seoul** é uma landing page de alto padrão focada em pacotes de viagen
 
 ---
 
-## 🚀 Demonstração Online
-Confira o projeto ao vivo: 
-👉 [https://barbara-larissa.github.io/luxe-seoul/](https://barbara-larissa.github.io/luxe-seoul/)
+
+## 🚀 Projeto Ao Vivo
+
+Confira o projeto desenvolvido e publicado de forma profissional:
+
+👉 **[Acessar K-TRAVEL TURISMO](https://luxe-seoul-s6te.vercel.app/)**
+
 
 ## 🛠️ Tecnologias Utilizadas
 * **React 19** + **Vite**
