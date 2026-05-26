@@ -1,91 +1,160 @@
-/* --- RESET E VARIÁVEIS DO PROJETO --- */
+/* ==================================================
+   RESET GLOBAL & VARIÁVEIS
+================================================== */
+
 :root {
   --magenta: #EF007E;
   --azul-reserva: #007bff;
+
   --bg-cartao: #ffffff;
+
   --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 * {
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0d0d0d; /* Corrigido para manter a identidade dark premium */
+
+  background-color: #0d0d0d;
+
+  color: #ffffff;
 }
+
+/* ==================================================
+   LAYOUT GLOBAL
+================================================== */
 
 .app_container {
   width: 100%;
+
   position: relative;
+
   display: flex;
   flex-direction: column;
 
+  min-height: 100vh;
+
+  padding-top: 70px;
+
+  overflow-x: hidden;
+
 }
-/* --- TÍTULO DA SEÇÃO (O TOQUE DE LUXO) --- */
+
+
+/* ==================================================
+   TÍTULO DA SEÇÃO
+================================================== */
+
 .title_section {
   width: 100%;
+
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
-padding: 40px 0 40px; 
+
+  padding: 0 0 40px;
+
   text-align: center;
 }
 
 .page_title {
   font-size: 3.5rem;
   font-weight: 900;
-  color: #ffffff; /* Ajustado para branco para contrastar com o fundo escuro */
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  position: relative;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 
+  color: #ffffff;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  position: relative;
+
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .page_title::after {
   content: '';
+
   position: absolute;
+
   bottom: -15px;
   left: 50%;
+
   transform: translateX(-50%);
+
   width: 80px;
   height: 4px;
+
   background: var(--magenta);
+
   border-radius: 2px;
+
   box-shadow: 0 0 12px var(--magenta);
 }
 
-/* --- GRID DE PACOTES (CORRIGIDO) --- */
+/* ==================================================
+   GRID DE PACOTES
+================================================== */
+
 .packages_grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
-  gap: 30px !important;
-  width: 100% !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding: 40px 20px !important;
-  align-items: start !important;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 30px;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 40px 20px;
+
+  align-items: start;
 }
 
 .package_item {
   width: 100%;
+
   display: flex;
   justify-content: center;
 }
 
-/* --- CSS DOS CARDS (SUA ESTRUTURA) --- */
+/* ==================================================
+   CARD DOS PACOTES
+================================================== */
+
 .cartao {
-  background: var(--bg-cartao);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.3s ease;
-  border: 1px solid #eee;
   width: 100%;
+
+  background: var(--bg-cartao);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  border: 1px solid #eeeeee;
+
+  box-shadow: var(--shadow-soft);
+
+  transition: transform 0.3s ease;
 }
 
 .cartao:hover {
@@ -94,68 +163,103 @@ padding: 40px 0 40px;
 
 .imagem {
   height: 200px;
+
   background-size: cover;
   background-position: center;
+
   position: relative;
+
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
 .conteudo {
   padding: 25px;
+
   text-align: left;
 }
 
 .nomePacote {
   font-size: 20px;
-  color: #333;
-  margin-bottom: 10px;
   font-weight: bold;
+
+  color: #333333;
+
+  margin-bottom: 10px;
 }
 
+/* ==================================================
+   PREÇO & DETALHES
+================================================== */
+
 .precoContainer {
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   margin-bottom: 20px;
-  width: 100%;
 }
 
 .preco {
   margin: 0;
+
   font-size: 0.95rem;
-  color: #666;
+
+  color: #666666;
 }
 
 .botaoDetalhes {
   background: transparent;
+
   border: 1px solid var(--magenta);
+
   color: var(--magenta);
+
   padding: 5px 15px;
+
   border-radius: 20px;
+
   font-size: 0.8rem;
   font-weight: 600;
+
   cursor: pointer;
+
   transition: all 0.3s ease;
 }
 
 .botaoDetalhes:hover {
   background: #fce4ec;
+
   transform: scale(1.05);
 }
 
+/* ==================================================
+   BOTÃO RESERVAR
+================================================== */
+
 .botaoReservar {
   width: 100%;
+
   background-color: var(--magenta);
+
   color: white;
+
   padding: 14px;
+
   border: none;
   border-radius: 12px;
+
   font-weight: bold;
+
   text-transform: uppercase;
+
   cursor: pointer;
+
   box-shadow: 0 4px 15px rgba(239, 0, 126, 0.3);
-  transition: background 0.3s;
+
+  transition: all 0.3s ease;
 }
 
 .botaoReservar:hover {
@@ -163,90 +267,132 @@ padding: 40px 0 40px;
 }
 
 /* ==================================================
-   ESTILIZAÇÃO DO MODAL (ESTRUTURA)
+   MODAL OVERLAY
 ================================================== */
 
 .modal_overlay {
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 100vw;
   height: 100vh;
+
   background-color: rgba(0, 0, 0, 0.75);
+
   backdrop-filter: blur(8px);
+
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100000; /* Aumentado para garantir que fique acima do header fixo */
+
+  z-index: 100000;
 }
 
+/* ==================================================
+   MODAL CONTENT
+================================================== */
+
 .modal_content {
-  background: #ffffff !important;
-  padding: 35px;
-  border-radius: 25px;
   width: 90%;
   max-width: 500px;
+
   position: relative;
+
+  background: #ffffff;
+
+  color: #333333;
+
+  padding: 35px;
+
+  border-radius: 25px;
+
   text-align: center;
+
   box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-  color: #333 !important;
 }
+
+/* ==================================================
+   BOTÃO FECHAR
+================================================== */
 
 .btn_fechar {
   position: absolute;
+
   top: 15px;
   right: 15px;
-  background: #f0f0f0;
-  border: none;
+
   width: 30px;
   height: 30px;
+
+  background: #f0f0f0;
+
+  border: none;
   border-radius: 50%;
+
   cursor: pointer;
-  color: #666;
+
+  color: #666666;
+
   font-weight: bold;
 }
 
 /* ==================================================
-   ESTILIZAÇÃO DO CALENDÁRIO (React-Calendar)
+   CALENDÁRIO
 ================================================== */
 
 .calendar_container {
   margin: 20px 0;
+
   background: #f9f9f9;
+
   border-radius: 15px;
+
   padding: 10px;
-  border: 1px solid #eee;
+
+  border: 1px solid #eeeeee;
+
   display: flex;
   justify-content: center;
 }
 
 .react-calendar {
-  width: 100% !important;
+  width: 100%;
+
   border: none !important;
+
   background: transparent !important;
+
   font-family: 'Inter', sans-serif;
 }
 
 .react-calendar__tile--active {
   background: var(--magenta) !important;
+
   color: white !important;
+
   border-radius: 8px;
 }
 
 .react-calendar__tile--now {
   background: #fff0f6 !important;
+
   color: var(--magenta) !important;
+
   font-weight: bold;
 }
 
 /* ==================================================
-   INPUTS DE PESSOAS E RODAPÉ
+   INPUTS DO MODAL
 ================================================== */
 
 .modal_grid_inputs {
   display: flex;
   flex-direction: column;
+
   gap: 12px;
+
   margin: 20px 0;
 }
 
@@ -254,69 +400,106 @@ padding: 40px 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f4f6f8 !important;
+
+  background: #f4f6f8;
+
   padding: 12px 20px;
+
   border-radius: 12px;
+
   border: 1px solid #e0e0e0;
 }
 
 .modal_input_group label {
   font-weight: 700;
-  color: #444;
+
+  color: #444444;
+
   font-size: 0.9rem;
 }
 
 .modal_input {
-  border: none !important;
-  background: transparent !important;
   width: 50px;
+
+  border: none;
+
+  background: transparent;
+
+  outline: none;
+
   text-align: right;
+
   font-size: 1.2rem;
   font-weight: 800;
-  color: var(--magenta) !important;
-  outline: none;
+
+  color: var(--magenta);
 }
+
+/* ==================================================
+   RODAPÉ MODAL
+================================================== */
 
 .modal_footer {
   margin-top: 20px;
+
   padding-top: 15px;
-  border-top: 1px dashed #ddd;
+
+  border-top: 1px dashed #dddddd;
 }
 
 .modal_price_total {
   font-size: 1.1rem;
+
   margin-bottom: 20px;
 }
 
 .modal_price_total strong {
   font-size: 1.5rem;
+
   color: #1a1a1a;
+
   margin-left: 10px;
 }
 
-/* --- BOTÃO CONFIRMAR (ESTILO LIMPO) --- */
+/* ==================================================
+   BOTÃO CONFIRMAR
+================================================== */
 
 .modal_content .btn_confirmar {
-  display: block;
   width: 100%;
+
+  display: block;
+
   margin-top: 25px;
+
   padding: 16px;
+
   background: var(--magenta);
-  color: #fff;
+
+  color: #ffffff;
+
   border: none;
   border-radius: 12px;
+
   font-size: 1rem;
   font-weight: 800;
+
   text-transform: uppercase;
+
   letter-spacing: 1px;
+
   cursor: pointer;
+
   transition: all 0.3s ease;
+
   box-shadow: 0 4px 15px rgba(239, 0, 126, 0.3);
 }
 
 .modal_content .btn_confirmar:hover {
   background-color: #d4006f;
+
   transform: translateY(-2px);
+
   box-shadow: 0 6px 20px rgba(239, 0, 126, 0.4);
 }
 
@@ -325,56 +508,68 @@ padding: 40px 0 40px;
 }
 
 /* ==================================================
-   RESPONSIVIDADE 
+   RESPONSIVIDADE TABLET
 ================================================== */
 
 @media (max-width: 850px) {
+
   .title_section {
-    /* 🌟 No tablet e mobile, o header responsivo se adapta e o padding acompanha */
-     padding: 40px 0 40px;
+    padding: 40px 0;
   }
 
   .page_title {
     font-size: 2.2rem;
+
     letter-spacing: 3px;
-    color: #ffffff;
   }
-  
+
   .packages_grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-    padding: 20px !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    padding: 20px;
   }
 }
 
+/* ==================================================
+   RESPONSIVIDADE MOBILE
+================================================== */
+
 @media (max-width: 480px) {
-  /* Título da Seção */
+
+  .app_container {
+    padding-top: 95px;
+  }
+
   .title_section {
-    /* 🌟 No mobile, o Header expande verticalmente, então aumentamos o respiro superior */
-  padding: 30px 15px 30px;
+    padding: 30px 15px;
   }
 
   .page_title {
     font-size: 1.6rem;
+
     letter-spacing: 2px;
+
     line-height: 1.2;
-    color: #ffffff;
   }
 
   .page_title::after {
     width: 50px;
     height: 3px;
+
     bottom: -10px;
   }
 
-  /* Grid e Cards */
   .packages_grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    padding: 10px 20px !important;
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 10px 20px;
   }
 
   .cartao {
     max-width: 380px;
+
     margin: 0 auto;
   }
 
@@ -386,40 +581,48 @@ padding: 40px 0 40px;
     font-size: 18px;
   }
 
-  /* Modal Responsivo */
   .modal_content {
-    padding: 20px;
     width: 95%;
+
+    padding: 20px;
   }
 
   .modal_price_total strong {
     font-size: 1.3rem;
   }
-  
+
   .btn_confirmar {
     padding: 14px;
+
     font-size: 0.9rem;
   }
 }
 
-/* Ajuste para telas minúsculas (iPhone SE antigo) */
+/* ==================================================
+   TELAS MUITO PEQUENAS
+================================================== */
+
 @media (max-width: 350px) {
+
   .title_section {
-      padding-top: 30px;
+    padding-top: 30px;
   }
 
   .page_title {
     font-size: 1.3rem;
   }
-  
+
   .precoContainer {
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 10px;
   }
-  
+
   .botaoDetalhes {
     width: 100%;
+
     text-align: center;
   }
 }
