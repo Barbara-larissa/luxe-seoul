@@ -7,13 +7,11 @@
 
 html, body {
   width: 100%;
-  margin: 0;
-  padding: 0;
+  min-height: 100vh; 
   background-color: #0d0d0d;
   color: white;
   font-family: 'Segoe UI', Roboto, 'Inter', sans-serif;
-  overflow-x: hidden; /* ← REMOVA daqui */
-  overflow-y: auto;
+  
 }
 
 #root {
@@ -21,5 +19,5 @@ html, body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-    overflow-x: hidden;
+  overflow-x: hidden; 
 }

@@ -43,24 +43,24 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* COLUNA 2: AGÊNCIA (COM LINKS CLICÁVEIS) */}
+          {/* COLUNA 2: AGÊNCIA (COM LINKS CORRIGIDOS PARA AS ROTAS) */}
           <div className={styles.footer_col}>
             <h3>A AGÊNCIA</h3>
             <ul>
               <li><Link to="/sobre">Sobre Nós</Link></li>
-              <li><Link to="/termos">Termos de Uso</Link></li>
-              <li><Link to="/privacidade">Política de Privacidade</Link></li>
+              <li><Link to="/termos-uso">Termos de Uso</Link></li>
+              <li><Link to="/politica-privacidade">Política de Privacidade</Link></li>
               <li><Link to="/trabalhe-conosco">Trabalhe Conosco</Link></li>
             </ul>
           </div>
 
-          {/* COLUNA 3: SUPORTE */}
+          {/* COLUNA 3: SUPORTE (COM LINKS CORRIGIDOS PARA AS ROTAS) */}
           <div className={styles.footer_col}>
             <h3>SUPORTE</h3>
             <ul>
-              <li><Link to="/ajuda">Central de Ajuda</Link></li>
+              <li><Link to="/central-ajuda">Central de Ajuda</Link></li>
               <li><Link to="/cancelamentos">Cancelamentos</Link></li>
-              <li><Link to="/seguro">Seguro Viagem</Link></li>
+              <li><Link to="/seguro-viagem">Seguro Viagem</Link></li>
               <li><Link to="/contato-seul">Contato Seul</Link></li>
             </ul>
           </div>
@@ -77,20 +77,18 @@ const Footer = () => {
               </div>
             </div>
 
-  
-   
-{/* REDES SOCIAIS COM HOVER PREMIUM */}
-<div className={styles.social_icons_row}>
-  <a href="https://instagram.com" target="_blank" rel="noreferrer" className={styles.social_icon_item}>
-    <FaInstagram />
-  </a>
-  <a href="https://wa.me/5543996818242" target="_blank" rel="noreferrer" className={styles.social_icon_item}>
-    <FaWhatsapp />
-  </a>
-  <a href="https://tiktok.com" target="_blank" rel="noreferrer" className={styles.social_icon_item}>
-    <FaTiktok />
-  </a>
-</div>
+            {/* REDES SOCIAIS COM HOVER PREMIUM */}
+            <div className={styles.social_icons_row}>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className={styles.social_icon_item}>
+                <FaInstagram />
+              </a>
+              <a href="https://wa.me/5543996818242" target="_blank" rel="noreferrer" className={styles.social_icon_item}>
+                <FaWhatsapp />
+              </a>
+              <a href="https://tiktok.com" target="_blank" rel="noreferrer" className={styles.social_icon_item}>
+                <FaTiktok />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -98,7 +96,7 @@ const Footer = () => {
         <div className={styles.bottom_bar}>
           <p>&copy; 2026 Agência Luxe Seoul. CNPJ: 00.000.000/0001-00.</p>
           <div className={styles.payment_icons}>
-              <span>💳</span> <span>📱</span> <span>📄</span>
+            <span>💳</span> <span>📱</span> <span>📄</span>
           </div>
         </div>
 

@@ -8,7 +8,7 @@ export const hoteisParceiros = {
       telefone: "+82 2-6388-5000",
       distanciaAgencia: "4.2 km",
       parceriaTag: "Parceiro Oficial",
-      beneficio: "🎁 Benefício: Café da manhã incluso + Upgrade de Quarto",
+      beneficio: "Café da manhã incluso + Upgrade de Quarto",
       imagemManual: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200"
     },
     {
@@ -19,10 +19,11 @@ export const hoteisParceiros = {
       telefone: "+82 2-6310-1000",
       distanciaAgencia: "1.5 km",
       parceriaTag: "Parceria Premium",
-      beneficio: "🚗 Benefício: Traslado gratuito do Aeroporto",
+      beneficio: "Traslado gratuito do Aeroporto",
       imagemManual: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200"
     }
   ],
+
   Busan: [
     {
       place_id: "busan-1",
@@ -32,10 +33,11 @@ export const hoteisParceiros = {
       telefone: "+82 51-922-1000",
       distanciaAgencia: "A 2 quarteirões da praia",
       parceriaTag: "Vista Mar Luxo",
-      beneficio: "🍹 Benefício: Drink de boas-vindas + Lounge VIP",
+      beneficio: "Drink de boas-vindas + Lounge VIP",
       imagemManual: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200"
     }
   ],
+
   Jeju: [
     {
       place_id: "jeju-1",
@@ -45,7 +47,7 @@ export const hoteisParceiros = {
       telefone: "+82 64-735-5114",
       distanciaAgencia: "Próximo ao Vulcão Hallasan",
       parceriaTag: "Resort Natureza",
-      beneficio: "🎟️ Benefício: Crachá de turismo grátis para trilhas",
+      beneficio: "Acesso gratuito para trilhas turísticas",
       imagemManual: "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200"
     }
   ]

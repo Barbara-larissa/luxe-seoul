@@ -67,8 +67,6 @@
   overflow: hidden;
   transition: 0.3s;
   
-  /* CORREÇÃO AQUI: Removidas as propriedades preserve-3d e backface-visibility 
-     que quebravam o position: fixed do botão global */
 }
 
 .card_pacote:nth-child(even) {
@@ -181,6 +179,51 @@
   box-shadow: 0 0 20px #ef007e;
   transform: scale(1.05);
 }
+
+
+
+
+
+
+
+
+.price_info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price_info span:first-child {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.price_info span:nth-child(2) {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.price_info span:last-child {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ==================================================
    RESPONSIVIDADE TABLET

@@ -235,8 +235,8 @@
   flex-direction: column;
   gap: 16px;
 
-  overflow-y: auto;   /* 🔥 agora funciona no mobile */
-  max-height: 55vh;   /* 🔥 impede sumir texto */
+  overflow-y: auto;  
+  max-height: 55vh;  
 }
 
 .modal_texto p {
